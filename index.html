@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillNest | Unleash Your Potential</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #064E3B;
+      --primary-light: #0A6C52;
+      --accent: #D97706;
+      --accent-hover: #B45309;
+      --bg: #FCFBF7;
+      --card-bg: #FFFFFF;
+      --text: #1E293B;
+      --muted: #64748B;
+      --border: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(6, 78, 59, 0.15);
+    }
+    .logo { font-size: 1.6rem; font-weight: 800; }
+    .logo span { color: var(--accent); }
+    .tagline { font-size: 0.85rem; color: #A7F3D0; font-weight: 600; }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #92400E;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    .hero p { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2.2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.5rem;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 0.4rem; }
+    input, select {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: 0.2s;
+    }
+    .btn-submit:hover { background: var(--accent-hover); }
+
+    .status-msg {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      display: none;
+      font-weight: 600;
+    }
+    .status-success { background: #DEF7EC; color: #03543F; border: 1px solid #84E1BC; }
+    .status-error { background: #FDE8E8; color: #9B1C1C; border: 1px solid #F8B4B4; }
+
+    /* Admin Table Styling */
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .btn-refresh {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background: #F1F5F9;
+      color: #334155;
+      padding: 0.8rem;
+      border-bottom: 2px solid var(--border);
+    }
+    td {
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge-pending { background: #FEF3C7; color: #92400E; }
+
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Skill<span>Nest</span></div>
+    <div class="tagline">Learn • Grow • Lead</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">Cohort-1 Admissions Open</div>
+      <h1>Unleash Your Potential</h1>
+      <p>১২ মাসের ট্রান্সফরমেশনাল জার্নি: স্পোকেন কমিউনিকেশন, লাইফস্টাইল ডিসিপ্লিন ও মাইক্রো-উদ্যোক্তা তৈরির প্ল্যাটফর্ম।</p>
+    </section>
+
+    <div class="container">
+      <!-- ফর্ম সেকশন -->
+      <div class="card">
+        <h2>অ্যাডমিশন ও কিট সাইজ রেজিস্ট্রেশন</h2>
+        <p>আপনার সঠিক মাপ প্রদান করুন। ভর্তির পর ৫ কার্যদিবসের মধ্যে কিট ডেলিভারি প্রসেস হবে।</p>
+
+        <form id="admissionForm">
+          <div class="form-group">
+            <label for="fullName">শিক্ষার্থীর পূর্ণ নাম *</label>
+            <input type="text" id="fullName" required placeholder="আপনার নাম লিখুন" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">মোবাইল নম্বর *</label>
+              <input type="tel" id="phone" required placeholder="017XXXXXXXX" />
+            </div>
+            <div class="form-group">
+              <label for="guardianPhone">অভিভাবকের নম্বর *</label>
+              <input type="tel" id="guardianPhone" required placeholder="018XXXXXXXX" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="heightInches">উচ্চতা (ইঞ্চিতে)</label>
+              <input type="number" id="heightInches" placeholder="উদা: 66" />
+            </div>
+            <div class="form-group">
+              <label for="chestSize">বুকের মাপ (ইঞ্চিতে)</label>
+              <input type="number" id="chestSize" placeholder="উদা: 38" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tshirtSize">অফিশিয়াল টি-শার্ট সাইজ *</label>
+            <select id="tshirtSize" required>
+              <option value="S">S (Small)</option>
+              <option value="M" selected>M (Medium)</option>
+              <option value="L">L (Large)</option>
+              <option value="XL">XL (Extra Large)</option>
+              <option value="XXL">XXL (Double Extra Large)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">নিশ্চিত করুন ও কিট বুক করুন</button>
+          <div id="statusBox" class="status-msg"></div>
+        </form>
+      </div>
+
+      <!-- অ্যাডমিন ও লজিস্টিকস টেবিল -->
+      <div class="card">
+        <div class="admin-header">
+          <div>
+            <h2>অ্যাডমিন ও লজিস্টিকস ট্র্যাকার</h2>
+            <small style="color: var(--muted)">ভর্তিকৃত শিক্ষার্থী ও তাদের পোশাকের তালিকা</small>
+          </div>
+          <button class="btn-refresh" onclick="loadStudents()">তালিক রিফ্রেশ করুন</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>আইডি</th>
+              <th>নাম</th>
+              <th>ফোন</th>
+              <th>টি-শার্ট সাইজ</th>
+              <th>উচ্চতা/বুকের মাপ</th>
+              <th>কিট স্ট্যাটাস</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody">
+            <tr><td colspan="6" style="text-align: center; color: var(--muted);">ডেটা লোড হচ্ছে...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('admissionForm');
+    const statusBox = document.getElementById('statusBox');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // স্টুডেন্ট লিস্ট আনার ফাংশন
+    async function loadStudents() {
+      const tbody = document.getElementById('studentTableBody');
+      try {
+        const res = await fetch("/api/students");
+        const students = await res.json();
+        
+        if (students.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align: center;">কোনো শিক্ষার্থী এখনও নিবন্ধিত হয়নি।</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = students.map(s => `
+          <tr>
+            <td><strong>#${s.id}</strong></td>
+            <td>${s.full_name}</td>
+            <td>${s.phone}</td>
+            <td><span style="font-weight:700; color: var(--accent);">${s.tshirt_size}</span></td>
+            <td>${s.height_inches || '-'}″ / ${s.chest_size_inches || '-'}″</td>
+            <td><span class="badge badge-pending">${s.kit_dispatch_status}</span></td>
+          </tr>
+        `).join('');
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: red;">ডেটা লোড করতে সমস্যা হয়েছে।</td></tr>`;
+      }
+    }
+
+    // ফর্ম সাবমিট
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = "প্রসেসিং হচ্ছে...";
+      statusBox.style.display = "none";
+
+      const payload = {
+        full_name: document.getElementById('fullName').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        guardian_phone: document.getElementById('guardianPhone').value.trim() || null,
+        height_inches: parseInt(document.getElementById('heightInches').value) || null,
+        chest_size_inches: parseInt(document.getElementById('chestSize').value) || null,
+        tshirt_size: document.getElementById('tshirtSize').value,
+        batch_id: null
+      };
+
+      try {
+        const res = await fetch("/api/students/admit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          statusBox.textContent = `অভিনন্দন! রেজিস্ট্রেশন সম্পন্ন হয়েছে। স্টুডেন্ট আইডি: #${data.student_id}`;
+          statusBox.className = "status-msg status-success";
+          statusBox.style.display = "block";
+          form.reset();
+          loadStudents(); // সাথে সাথে নিচের টেবিল রিফ্রেশ হবে
+        } else {
+          statusBox.textContent = data.detail || "রেজিস্ট্রেশন ব্যর্থ হয়েছে।";
+          statusBox.className = "status-msg status-error";
+          statusBox.style.display = "block";
+        }
+      } catch (err) {
+        statusBox.textContent = "সার্ভার কানেকশন এরর!";
+        statusBox.className = "status-msg status-error";
+        statusBox.style.display = "block";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "নিশ্চিত করুন ও কিট বুক করুন";
+      }
+    });
+
+    // পেজ লোড হলেই স্বয়ংক্রিয়ভাবে টেবিল লোড হবে
+    loadStudents();
+  </script>
+</body>
+</html>
