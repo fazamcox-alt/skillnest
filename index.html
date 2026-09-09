@@ -10,70 +10,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        :root {
+            --sn-indigo: #312e81;
+            --sn-teal: #10b981;
+            --sn-blue: #38bdf8;
+            --sn-bg: #0f172a;
+            --sn-panel: #1e293b;
+            --sn-border: rgba(148, 163, 184, 0.22);
+            --sn-text: #e2e8f0;
+            --sn-muted: #94a3b8;
+        }
+
         body {
             font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
-            background-color: #051329;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.25) 0px, transparent 45%),
-                radial-gradient(circle at 85% 15%, rgba(79, 172, 254, 0.3) 0px, transparent 45%),
-                radial-gradient(circle at 50% 85%, rgba(14, 165, 233, 0.2) 0px, transparent 50%);
-            background-attachment: fixed;
-            color: #f8fafc;
+            background: radial-gradient(circle at top left, #1e1b4b 0%, #0f172a 45%, #0b1120 100%);
+            color: var(--sn-text);
             min-height: 100vh;
         }
 
-        /* Modern High-End EdTech Card */
-        .glass-card {
-            background: rgba(13, 33, 64, 0.88);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1.5px solid rgba(0, 242, 254, 0.35);
-            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 242, 254, 0.15);
+        /* Original SkillNest Glass Panel */
+        .sn-main-card {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--sn-border);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(16, 185, 129, 0.08);
         }
 
-        /* Clear, High-Contrast Form Inputs */
-        .custom-input {
-            background: #0d2243 !important;
-            border: 1.5px solid #204574 !important;
+        /* High Visibility Custom Input */
+        .sn-input {
+            background: #111c33 !important;
+            border: 1.5px solid #2d3f63 !important;
             color: #ffffff !important;
-            transition: all 0.25s ease-in-out;
+            transition: all 0.2s ease-in-out;
         }
-        .custom-input:focus {
+        .sn-input:focus {
             outline: none !important;
-            border-color: #00F2FE !important;
-            box-shadow: 0 0 18px rgba(0, 242, 254, 0.4) !important;
-            background: #122d57 !important;
+            border-color: var(--sn-teal) !important;
+            box-shadow: 0 0 16px rgba(16, 185, 129, 0.35) !important;
+            background: #152442 !important;
         }
 
-        /* Time Slot Cards */
-        .slot-chip input[type="radio"] {
+        /* Custom Interactive Radio Chips */
+        .chip-box input[type="radio"] {
             display: none;
         }
-        .slot-chip input[type="radio"]:checked + label {
-            background: linear-gradient(135deg, #00F2FE 0%, #0284c7 100%);
+        .chip-box input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, var(--sn-teal), var(--sn-blue));
             border-color: #ffffff;
-            color: #031326;
+            color: #0b1120;
             font-weight: 800;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.55);
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
             transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="p-4 md:p-8 flex flex-col items-center justify-center">
 
-    <!-- Top Action Bar for Teachers -->
+    <!-- Top Navigation for Teachers -->
     <div class="w-full max-w-2xl flex justify-end mb-4">
-        <button onclick="toggleTeacherModal(true)" class="text-xs md:text-sm font-bold text-cyan-200 hover:text-white bg-[#0f2d59] border border-cyan-400/50 px-5 py-2.5 rounded-xl transition-all duration-200 flex items-center gap-2 hover:bg-cyan-500 hover:text-slate-950 shadow-lg shadow-cyan-950/60">
-            <i class="fa-solid fa-chalkboard-user text-cyan-300"></i> শিক্ষক হিসেবে যোগ দিন (Teach with Us)
+        <button onclick="toggleTeacherModal(true)" class="text-xs md:text-sm font-bold text-emerald-300 hover:text-white bg-[#1e293b] border border-emerald-500/40 px-5 py-2.5 rounded-xl transition-all duration-200 flex items-center gap-2 hover:bg-emerald-600 hover:text-slate-950 shadow-md">
+            <i class="fa-solid fa-chalkboard-user text-emerald-400"></i> শিক্ষক হিসেবে যোগ দিন (Teach with Us)
         </button>
     </div>
 
-    <!-- Header Section -->
+    <!-- Header Section with Original Big Visible Logo -->
     <header class="text-center max-w-xl mx-auto mb-8">
         <div class="flex items-center justify-center gap-4 mb-3">
             
-            <!-- SkillNest Brand Logo (White backing for crisp contrast) -->
-            <div class="w-16 h-16 rounded-2xl bg-white border-2 border-cyan-400 p-1.5 flex items-center justify-center shadow-xl shadow-cyan-500/30 overflow-hidden">
+            <!-- Crisp Brand Logo Box (White Backing for Full Clarity) -->
+            <div class="w-20 h-20 rounded-2xl bg-white border-2 border-emerald-400 p-2 flex items-center justify-center shadow-xl shadow-teal-500/25">
                 <img src="https://i.ibb.co.com/60w8XYZR/logo.png" 
                      alt="SkillNest Logo" 
                      class="w-full h-full object-contain"
@@ -81,224 +87,224 @@
             </div>
 
             <div class="text-left">
-                <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white flex items-center gap-1.5 drop-shadow-md">
-                    SKILL<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-sky-400">NEST</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white flex items-center gap-1.5 drop-shadow">
+                    SKILL<span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-sky-400">NEST</span>
                 </h1>
             </div>
         </div>
 
-        <p class="text-cyan-300 text-xs md:text-sm font-black tracking-[0.28em] uppercase mb-4 drop-shadow">
+        <p class="text-sky-300 text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4">
             UNLEASH YOUR POTENTIAL
         </p>
 
-        <!-- Value Badges -->
+        <!-- Institutional Value Badges -->
         <div class="flex items-center justify-center gap-3">
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0d2a52] border border-cyan-400/50 text-cyan-200 flex items-center gap-1.5 shadow-md">
-                <i class="fa-solid fa-book-open text-[11px] text-cyan-300"></i> Learn
+            <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#1e293b] border border-emerald-500/30 text-emerald-300 flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-book-open text-[10px] text-emerald-400"></i> Learn
             </span>
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0d2a52] border border-cyan-400/50 text-cyan-200 flex items-center gap-1.5 shadow-md">
-                <i class="fa-solid fa-seedling text-[11px] text-cyan-300"></i> Grow
+            <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#1e293b] border border-emerald-500/30 text-emerald-300 flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-seedling text-[10px] text-emerald-400"></i> Grow
             </span>
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0d2a52] border border-cyan-400/50 text-cyan-200 flex items-center gap-1.5 shadow-md">
-                <i class="fa-solid fa-award text-[11px] text-cyan-300"></i> Lead
+            <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#1e293b] border border-emerald-500/30 text-emerald-300 flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-award text-[10px] text-emerald-400"></i> Lead
             </span>
         </div>
     </header>
 
-    <!-- Main Registration Card -->
-    <main class="w-full max-w-2xl glass-card rounded-3xl p-6 md:p-10 relative">
+    <!-- Main Form Container -->
+    <main class="w-full max-w-2xl sn-main-card rounded-3xl p-6 md:p-10 relative">
         
         <!-- Step Progress Indicator -->
         <div class="mb-8">
             <div class="flex justify-between items-center mb-2.5 text-xs font-bold uppercase tracking-wider">
-                <span id="stepIndicatorText" class="text-cyan-300 text-sm">ধাপ ১: প্রাথমিক তথ্য ও শিফট</span>
-                <span id="stepPercentText" class="text-cyan-300 font-black text-sm">৩৩% সম্পন্ন</span>
+                <span id="stepIndicatorText" class="text-teal-300 text-sm">ধাপ ১: প্রাথমিক তথ্য ও শিফট</span>
+                <span id="stepPercentText" class="text-sky-400 font-extrabold text-sm">৩৩% সম্পন্ন</span>
             </div>
-            <div class="w-full h-2.5 bg-[#071933] rounded-full overflow-hidden border border-cyan-500/20">
-                <div id="progressBar" class="h-full bg-gradient-to-r from-cyan-400 to-sky-500 w-1/3 transition-all duration-300"></div>
+            <div class="w-full h-2.5 bg-[#0b1120] rounded-full overflow-hidden border border-slate-700">
+                <div id="progressBar" class="h-full bg-gradient-to-r from-teal-400 via-sky-400 to-indigo-500 w-1/3 transition-all duration-300"></div>
             </div>
         </div>
 
         <form id="studentRegistrationForm" class="space-y-6">
             
-            <!-- ================= STEP 1 ================= -->
+            <!-- ================= STEP 1: Basic & Shift ================= -->
             <div id="step1" class="space-y-5">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">শিক্ষার্থীর পুরো নাম *</label>
-                        <input type="text" id="student_name" required placeholder="উদা: ফখরা আজম" class="w-full px-4 py-3.5 rounded-xl custom-input text-sm">
+                        <label class="block text-xs font-bold text-slate-200 mb-2">শিক্ষার্থীর পুরো নাম *</label>
+                        <input type="text" id="student_name" required placeholder="উদা: ফখরা আজম" class="w-full px-4 py-3.5 rounded-xl sn-input text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">মোবাইল নম্বর *</label>
-                        <input type="tel" id="student_phone" required placeholder="017xxxxxxxx" class="w-full px-4 py-3.5 rounded-xl custom-input text-sm">
+                        <label class="block text-xs font-bold text-slate-200 mb-2">মোবাইল নম্বর *</label>
+                        <input type="tel" id="student_phone" required placeholder="017xxxxxxxx" class="w-full px-4 py-3.5 rounded-xl sn-input text-sm">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">বর্তমান শ্রেণি *</label>
-                        <select id="student_class" required class="w-full px-4 py-3.5 rounded-xl custom-input text-sm cursor-pointer">
-                            <option value="" class="bg-[#0b1c36] text-slate-400">শ্রেণি নির্বাচন করুন</option>
-                            <option value="Class 5" class="bg-[#0b1c36]">Class 5</option>
-                            <option value="Class 6" class="bg-[#0b1c36]">Class 6</option>
-                            <option value="Class 7" class="bg-[#0b1c36]">Class 7</option>
-                            <option value="Class 8" class="bg-[#0b1c36]">Class 8</option>
-                            <option value="Class 9" class="bg-[#0b1c36]">Class 9</option>
-                            <option value="Class 10" class="bg-[#0b1c36]">Class 10</option>
-                            <option value="HSC 1st/2nd Year" class="bg-[#0b1c36]">HSC (একাদশ / দ্বাদশ)</option>
-                            <option value="Undergraduate/Other" class="bg-[#0b1c36]">বিশ্ববিদ্যালয় / অন্যান্য</option>
+                        <label class="block text-xs font-bold text-slate-200 mb-2">বর্তমান শ্রেণি *</label>
+                        <select id="student_class" required class="w-full px-4 py-3.5 rounded-xl sn-input text-sm cursor-pointer">
+                            <option value="" class="bg-[#1e293b] text-slate-400">শ্রেণি নির্বাচন করুন</option>
+                            <option value="Class 5" class="bg-[#1e293b]">Class 5</option>
+                            <option value="Class 6" class="bg-[#1e293b]">Class 6</option>
+                            <option value="Class 7" class="bg-[#1e293b]">Class 7</option>
+                            <option value="Class 8" class="bg-[#1e293b]">Class 8</option>
+                            <option value="Class 9" class="bg-[#1e293b]">Class 9</option>
+                            <option value="Class 10" class="bg-[#1e293b]">Class 10</option>
+                            <option value="HSC 1st/2nd Year" class="bg-[#1e293b]">HSC (একাদশ / দ্বাদশ)</option>
+                            <option value="Undergraduate/Other" class="bg-[#1e293b]">বিশ্ববিদ্যালয় / অন্যান্য</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">জন্ম তারিখ *</label>
-                        <input type="date" id="student_dob" required class="w-full px-4 py-3.5 rounded-xl custom-input text-sm">
+                        <label class="block text-xs font-bold text-slate-200 mb-2">জন্ম তারিখ *</label>
+                        <input type="date" id="student_dob" required class="w-full px-4 py-3.5 rounded-xl sn-input text-sm">
                     </div>
                 </div>
 
                 <!-- Shift Selection Box -->
-                <div class="p-5 rounded-2xl bg-[#091e3d] border border-cyan-400/30 space-y-4">
-                    <label class="block text-xs font-extrabold text-cyan-300 uppercase tracking-wide flex items-center gap-2">
-                        <i class="fa-regular fa-clock text-cyan-400"></i> ক্লাসের ফ্রি সময় (শিফট নির্বাচন করুন) *
+                <div class="p-5 rounded-2xl bg-[#131e33] border border-slate-700/80 space-y-4">
+                    <label class="block text-xs font-extrabold text-teal-300 uppercase tracking-wide flex items-center gap-2">
+                        <i class="fa-regular fa-clock text-teal-400"></i> ক্লাসের ফ্রি সময় (শিফট নির্বাচন করুন) *
                     </label>
 
                     <!-- Morning Shift -->
                     <div>
                         <span class="text-xs font-bold text-amber-300 block mb-2"><i class="fa-solid fa-sun"></i> সকালের শিফট:</span>
-                        <div class="grid grid-cols-2 gap-3 text-xs slot-chip">
+                        <div class="grid grid-cols-2 gap-3 text-xs chip-box">
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_m1" value="Morning 7:00 AM" required>
-                                <label for="slot_m1" class="block text-center py-3.5 px-3 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">সকাল ৭:০০ টা</label>
+                                <label for="slot_m1" class="block text-center py-3.5 px-3 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">সকাল ৭:০০ টা</label>
                             </div>
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_m2" value="Morning 8:00 AM">
-                                <label for="slot_m2" class="block text-center py-3.5 px-3 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">সকাল ৮:০০ টা</label>
+                                <label for="slot_m2" class="block text-center py-3.5 px-3 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">সকাল ৮:০০ টা</label>
                             </div>
                         </div>
                     </div>
 
                     <!-- Evening Shift -->
                     <div>
-                        <span class="text-xs font-bold text-cyan-300 block mb-2"><i class="fa-solid fa-moon"></i> বিকাল ও সান্ধ্য শিফট:</span>
-                        <div class="grid grid-cols-3 gap-2.5 text-xs slot-chip">
+                        <span class="text-xs font-bold text-sky-300 block mb-2"><i class="fa-solid fa-moon"></i> বিকাল ও সান্ধ্য শিফট:</span>
+                        <div class="grid grid-cols-3 gap-2.5 text-xs chip-box">
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_e1" value="Evening 4:00 PM">
-                                <label for="slot_e1" class="block text-center py-3 px-2 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">বিকাল ৪:০০</label>
+                                <label for="slot_e1" class="block text-center py-3 px-2 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">বিকাল ৪:০০</label>
                             </div>
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_e2" value="Evening 5:00 PM">
-                                <label for="slot_e2" class="block text-center py-3 px-2 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">বিকাল ৫:০০</label>
+                                <label for="slot_e2" class="block text-center py-3 px-2 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">বিকাল ৫:০০</label>
                             </div>
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_e3" value="Evening 6:00 PM">
-                                <label for="slot_e3" class="block text-center py-3 px-2 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">সন্ধ্যা ৬:০০</label>
+                                <label for="slot_e3" class="block text-center py-3 px-2 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">সন্ধ্যা ৬:০০</label>
                             </div>
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_n1" value="Night 7:00 PM">
-                                <label for="slot_n1" class="block text-center py-3 px-2 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">সন্ধ্যা ৭:০০</label>
+                                <label for="slot_n1" class="block text-center py-3 px-2 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">সন্ধ্যা ৭:০০</label>
                             </div>
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_n2" value="Night 8:00 PM">
-                                <label for="slot_n2" class="block text-center py-3 px-2 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">রাত ৮:০০</label>
+                                <label for="slot_n2" class="block text-center py-3 px-2 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">রাত ৮:০০</label>
                             </div>
                             <div>
                                 <input type="radio" name="batch_slot" id="slot_n3" value="Night 9:00 PM">
-                                <label for="slot_n3" class="block text-center py-3 px-2 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">রাত ৯:০০</label>
+                                <label for="slot_n3" class="block text-center py-3 px-2 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">রাত ৯:০০</label>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <button type="button" onclick="goToStep(2)" class="w-full py-4 rounded-xl font-black text-sm bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:opacity-95 text-[#031326] shadow-xl shadow-cyan-500/30 transition-all flex items-center justify-center gap-2">
+                <button type="button" onclick="goToStep(2)" class="w-full py-4 rounded-xl font-extrabold text-sm bg-gradient-to-r from-teal-400 via-sky-400 to-indigo-500 hover:opacity-95 text-[#0b1120] shadow-lg shadow-teal-500/20 transition-all flex items-center justify-center gap-2">
                     পরবর্তী ধাপে যান <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
             </div>
 
-            <!-- ================= STEP 2 ================= -->
+            <!-- ================= STEP 2: Background & Vision ================= -->
             <div id="step2" class="space-y-5 hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">বাবার নাম *</label>
-                        <input type="text" id="father_name" placeholder="বাবার পুরো নাম" class="w-full px-4 py-3.5 rounded-xl custom-input text-sm">
+                        <label class="block text-xs font-bold text-slate-200 mb-2">বাবার নাম *</label>
+                        <input type="text" id="father_name" placeholder="বাবার পুরো নাম" class="w-full px-4 py-3.5 rounded-xl sn-input text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">অভিভাবকের মোবাইল নম্বর *</label>
-                        <input type="tel" id="guardian_phone" placeholder="018xxxxxxxx" class="w-full px-4 py-3.5 rounded-xl custom-input text-sm">
+                        <label class="block text-xs font-bold text-slate-200 mb-2">অভিভাবকের মোবাইল নম্বর *</label>
+                        <input type="tel" id="guardian_phone" placeholder="018xxxxxxxx" class="w-full px-4 py-3.5 rounded-xl sn-input text-sm">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-slate-100 mb-2">পূর্ণ ঠিকানা (গ্রাম/রোড, থানা, জেলা) *</label>
-                    <textarea id="student_address" rows="2" placeholder="আপনার বিস্তারিত স্থায়ী ঠিকানা লিখুন..." class="w-full px-4 py-3.5 rounded-xl custom-input text-sm"></textarea>
+                    <label class="block text-xs font-bold text-slate-200 mb-2">পূর্ণ ঠিকানা (গ্রাম/রোড, থানা, জেলা) *</label>
+                    <textarea id="student_address" rows="2" placeholder="আপনার স্থায়ী ঠিকানা লিখুন..." class="w-full px-4 py-3.5 rounded-xl sn-input text-sm"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">ভবিষ্যতে কী হতে চাও? (Aim in Life) *</label>
-                        <input type="text" id="student_aim" placeholder="উদা: সফটওয়্যার ইঞ্জিনিয়ার, ট্রেইনার..." class="w-full px-4 py-3.5 rounded-xl custom-input text-sm">
+                        <label class="block text-xs font-bold text-slate-200 mb-2">ভবিষ্যতে কী হতে চাও? (Aim in Life) *</label>
+                        <input type="text" id="student_aim" placeholder="উদা: সফটওয়্যার ইঞ্জিনিয়ার, ট্রেইনার..." class="w-full px-4 py-3.5 rounded-xl sn-input text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-100 mb-2">অবসরে কী করতে ভালোবাসো? (Hobby) *</label>
-                        <input type="text" id="student_hobby" placeholder="উদা: বই পড়া, প্রেজেন্টেশন, কোডিং..." class="w-full px-4 py-3.5 rounded-xl custom-input text-sm">
+                        <label class="block text-xs font-bold text-slate-200 mb-2">অবসরে কী করতে ভালোবাসো? (Hobby) *</label>
+                        <input type="text" id="student_hobby" placeholder="উদা: বই পড়া, প্রেজেন্টেশন, কোডিং..." class="w-full px-4 py-3.5 rounded-xl sn-input text-sm">
                     </div>
                 </div>
 
                 <div class="flex gap-3 pt-2">
-                    <button type="button" onclick="goToStep(1)" class="w-1/3 py-3.5 rounded-xl font-bold text-sm bg-[#122b52] hover:bg-slate-800 text-slate-200 border border-[#234c85] transition-all flex items-center justify-center gap-2">
+                    <button type="button" onclick="goToStep(1)" class="w-1/3 py-3.5 rounded-xl font-bold text-sm bg-[#1e293b] hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center justify-center gap-2">
                         <i class="fa-solid fa-arrow-left text-xs"></i> পূর্ববর্তী
                     </button>
-                    <button type="button" onclick="goToStep(3)" class="w-2/3 py-3.5 rounded-xl font-black text-sm bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:opacity-95 text-[#031326] shadow-xl shadow-cyan-500/30 transition-all flex items-center justify-center gap-2">
+                    <button type="button" onclick="goToStep(3)" class="w-2/3 py-3.5 rounded-xl font-extrabold text-sm bg-gradient-to-r from-teal-400 via-sky-400 to-indigo-500 hover:opacity-95 text-[#0b1120] shadow-lg shadow-teal-500/20 transition-all flex items-center justify-center gap-2">
                         পোশাক ও সম্মতি ধাপ <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- ================= STEP 3 ================= -->
+            <!-- ================= STEP 3: Logistics & Media Consent ================= -->
             <div id="step3" class="space-y-5 hidden">
                 
                 <!-- T-Shirt Size -->
-                <div class="p-5 rounded-2xl bg-[#091e3d] border border-cyan-400/30 space-y-3">
-                    <label class="block text-xs font-bold text-cyan-300 uppercase tracking-wide flex items-center gap-2">
-                        <i class="fa-solid fa-shirt text-cyan-400"></i> অফিসিয়াল টি-শার্ট / কিট সাইজ নির্বাচন করুন *
+                <div class="p-5 rounded-2xl bg-[#131e33] border border-slate-700/80 space-y-3">
+                    <label class="block text-xs font-bold text-teal-300 uppercase tracking-wide flex items-center gap-2">
+                        <i class="fa-solid fa-shirt text-teal-400"></i> অফিসিয়াল টি-শার্ট / কিট সাইজ নির্বাচন করুন *
                     </label>
-                    <div class="grid grid-cols-5 gap-3 text-xs slot-chip">
+                    <div class="grid grid-cols-5 gap-3 text-xs chip-box">
                         <div>
                             <input type="radio" name="cloth_size" id="size_s" value="S" required>
-                            <label for="size_s" class="block text-center py-3.5 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">S</label>
+                            <label for="size_s" class="block text-center py-3.5 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">S</label>
                         </div>
                         <div>
                             <input type="radio" name="cloth_size" id="size_m" value="M">
-                            <label for="size_m" class="block text-center py-3.5 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">M</label>
+                            <label for="size_m" class="block text-center py-3.5 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">M</label>
                         </div>
                         <div>
                             <input type="radio" name="cloth_size" id="size_l" value="L">
-                            <label for="size_l" class="block text-center py-3.5 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">L</label>
+                            <label for="size_l" class="block text-center py-3.5 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">L</label>
                         </div>
                         <div>
                             <input type="radio" name="cloth_size" id="size_xl" value="XL">
-                            <label for="size_xl" class="block text-center py-3.5 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">XL</label>
+                            <label for="size_xl" class="block text-center py-3.5 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">XL</label>
                         </div>
                         <div>
                             <input type="radio" name="cloth_size" id="size_xxl" value="XXL">
-                            <label for="size_xxl" class="block text-center py-3.5 rounded-xl bg-[#122b52] border border-[#234c85] cursor-pointer font-bold transition-all text-slate-100 hover:border-cyan-400">XXL</label>
+                            <label for="size_xxl" class="block text-center py-3.5 rounded-xl bg-[#1e293b] border border-slate-700 cursor-pointer font-bold transition-all text-slate-200 hover:border-teal-400">XXL</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Media Consent -->
-                <div class="p-5 rounded-2xl bg-[#0e274c] border border-cyan-400/40 space-y-2">
+                <div class="p-5 rounded-2xl bg-[#1e293b] border border-emerald-500/40 space-y-2">
                     <label class="flex items-start gap-3 cursor-pointer">
-                        <input type="checkbox" id="student_media_consent" required class="mt-1 w-4 h-4 rounded text-cyan-500 focus:ring-cyan-400 border-slate-600 bg-[#071933]">
+                        <input type="checkbox" id="student_media_consent" required class="mt-1 w-4 h-4 rounded text-teal-500 focus:ring-teal-400 border-slate-600 bg-[#0f172a]">
                         <span class="text-xs text-slate-200 leading-relaxed">
-                            <b class="text-cyan-300 font-bold">সোশ্যাল মিডিয়া ও ভিডিও প্রকাশ সংক্রান্ত সম্মতি:</b> আমি ও আমার অভিভাবক সম্মতি প্রদান করছি যে, SkillNest প্ল্যাটফর্মের ক্লাস কার্যক্রম, স্পিকিং প্র্যাকটিস, প্রেজেন্টেশন এবং প্রমোশনাল ভিডিও/ছবি প্রতিষ্ঠানের অফিসিয়াল ফেসবুক পেজ ও সোশ্যাল মিডিয়ায় শিক্ষামূলক প্রচারণায় প্রকাশ করা যাবে। *
+                            <b class="text-teal-300 font-bold">সোশ্যাল মিডিয়া ও ভিডিও প্রকাশ সংক্রান্ত সম্মতি:</b> আমি ও আমার অভিভাবক সম্মতি প্রদান করছি যে, SkillNest প্ল্যাটফর্মের ক্লাস কার্যক্রম, স্পিকিং প্র্যাকটিস, প্রেজেন্টেশন এবং প্রমোশনাল ভিডিও/ছবি প্রতিষ্ঠানের অফিসিয়াল ফেসবুক পেজ ও সোশ্যাল মিডিয়ায় শিক্ষামূলক প্রচারণায় প্রকাশ করা যাবে। *
                         </span>
                     </label>
                 </div>
 
                 <div class="flex gap-3 pt-2">
-                    <button type="button" onclick="goToStep(2)" class="w-1/3 py-3.5 rounded-xl font-bold text-sm bg-[#122b52] hover:bg-slate-800 text-slate-200 border border-[#234c85] transition-all flex items-center justify-center gap-2">
+                    <button type="button" onclick="goToStep(2)" class="w-1/3 py-3.5 rounded-xl font-bold text-sm bg-[#1e293b] hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center justify-center gap-2">
                         <i class="fa-solid fa-arrow-left text-xs"></i> পূর্ববর্তী
                     </button>
-                    <button type="submit" class="w-2/3 py-3.5 rounded-xl font-black text-sm bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:opacity-95 text-[#031326] shadow-xl shadow-cyan-500/30 transition-all flex items-center justify-center gap-2">
+                    <button type="submit" class="w-2/3 py-3.5 rounded-xl font-extrabold text-sm bg-gradient-to-r from-teal-400 via-sky-400 to-indigo-500 hover:opacity-95 text-[#0b1120] shadow-lg shadow-teal-500/25 transition-all flex items-center justify-center gap-2">
                         <i class="fa-solid fa-check"></i> সম্পূর্ণ রেজিস্ট্রেশন সম্পন্ন করুন
                     </button>
                 </div>
@@ -308,14 +314,14 @@
     </main>
 
     <!-- Teacher Modal -->
-    <div id="teacherModal" class="fixed inset-0 bg-[#030e1d]/90 backdrop-blur-md flex items-center justify-center p-4 z-50 hidden">
-        <div class="w-full max-w-xl glass-card rounded-3xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto">
+    <div id="teacherModal" class="fixed inset-0 bg-[#0b1120]/90 backdrop-blur-md flex items-center justify-center p-4 z-50 hidden">
+        <div class="w-full max-w-xl sn-main-card rounded-3xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto">
             <button onclick="toggleTeacherModal(false)" class="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
             
-            <h3 class="text-xl font-bold text-cyan-300 mb-1 flex items-center gap-2">
-                <i class="fa-solid fa-chalkboard-user text-cyan-400"></i> শিক্ষক হিসেবে আবেদন করুন
+            <h3 class="text-xl font-bold text-teal-300 mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-chalkboard-user text-teal-400"></i> শিক্ষক হিসেবে আবেদন করুন
             </h3>
             <p class="text-xs text-slate-400 mb-5">SkillNest একাডেমিতে যোগ দিয়ে তরুণদের মেধা ও ক্যারিয়ার বিকাশে ভূমিকা রাখুন</p>
 
@@ -323,61 +329,61 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-200 mb-1.5">শিক্ষকের পুরো নাম *</label>
-                        <input type="text" required placeholder="আপনার পুরো নাম" class="w-full px-3.5 py-3 rounded-xl custom-input text-sm">
+                        <input type="text" required placeholder="আপনার পুরো নাম" class="w-full px-3.5 py-3 rounded-xl sn-input text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-200 mb-1.5">জন্ম তারিখ *</label>
-                        <input type="date" required class="w-full px-3.5 py-3 rounded-xl custom-input text-sm">
+                        <input type="date" required class="w-full px-3.5 py-3 rounded-xl sn-input text-sm">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-200 mb-1.5">ফোন নম্বর *</label>
-                        <input type="tel" required placeholder="017xxxxxxxx" class="w-full px-3.5 py-3 rounded-xl custom-input text-sm">
+                        <input type="tel" required placeholder="017xxxxxxxx" class="w-full px-3.5 py-3 rounded-xl sn-input text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-200 mb-1.5">ইমেইল অ্যাড্রেস *</label>
-                        <input type="email" required placeholder="name@example.com" class="w-full px-3.5 py-3 rounded-xl custom-input text-sm">
+                        <input type="email" required placeholder="name@example.com" class="w-full px-3.5 py-3 rounded-xl sn-input text-sm">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-200 mb-1.5">সর্বোচ্চ শিক্ষাগত যোগ্যতা *</label>
-                        <input type="text" required placeholder="উদা: Masters / B.Sc in English/CSE" class="w-full px-3.5 py-3 rounded-xl custom-input text-sm">
+                        <input type="text" required placeholder="উদা: Masters / B.Sc in English/CSE" class="w-full px-3.5 py-3 rounded-xl sn-input text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-200 mb-1.5">কোন বিষয়ে পড়াতে আগ্রহী? *</label>
-                        <input type="text" required placeholder="উদা: Spoken English, AI Tools, Soft Skills" class="w-full px-3.5 py-3 rounded-xl custom-input text-sm">
+                        <input type="text" required placeholder="উদা: Spoken English, AI Tools, Soft Skills" class="w-full px-3.5 py-3 rounded-xl sn-input text-sm">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-200 mb-1.5">পূর্ণ ঠিকানা *</label>
-                    <textarea rows="2" required placeholder="আপনার স্থায়ী ও বর্তমান ঠিকানা..." class="w-full px-3.5 py-3 rounded-xl custom-input text-sm"></textarea>
+                    <textarea rows="2" required placeholder="আপনার স্থায়ী ও বর্তমান ঠিকানা..." class="w-full px-3.5 py-3 rounded-xl sn-input text-sm"></textarea>
                 </div>
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-200 mb-1.5">পড়াতে কেন ভালোবাসেন? (Motivation) *</label>
-                    <textarea rows="2" required placeholder="শিক্ষকতার প্রতি আপনার প্যাশন ও শিক্ষার্থীদের অনুপ্রাণিত করার ভিশন লিখুন..." class="w-full px-3.5 py-3 rounded-xl custom-input text-sm"></textarea>
+                    <textarea rows="2" required placeholder="শিক্ষকতার প্রতি আপনার প্যাশন ও শিক্ষার্থীদের অনুপ্রাণিত করার ভিশন লিখুন..." class="w-full px-3.5 py-3 rounded-xl sn-input text-sm"></textarea>
                 </div>
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-200 mb-1.5">ভবিষ্যত ক্যারিয়ার লক্ষ্য (Vision) *</label>
-                    <input type="text" required placeholder="উদা: একজন আন্তর্জাতিক মানের মাস্টার ট্রেইনার ও ক্যারিয়ার মেন্টর হওয়া..." class="w-full px-3.5 py-3 rounded-xl custom-input text-sm">
+                    <input type="text" required placeholder="উদা: একজন আন্তর্জাতিক মানের মাস্টার ট্রেইনার ও ক্যারিয়ার মেন্টর হওয়া..." class="w-full px-3.5 py-3 rounded-xl sn-input text-sm">
                 </div>
 
-                <div class="p-3.5 rounded-xl bg-[#0e274c] border border-cyan-500/30">
+                <div class="p-3.5 rounded-xl bg-[#1e293b] border border-teal-500/40">
                     <label class="flex items-start gap-2.5 cursor-pointer">
-                        <input type="checkbox" required class="mt-1 w-4 h-4 rounded text-cyan-500 focus:ring-cyan-400 border-slate-600 bg-[#071933]">
+                        <input type="checkbox" required class="mt-1 w-4 h-4 rounded text-teal-500 focus:ring-teal-400 border-slate-600 bg-[#0f172a]">
                         <span class="text-xs text-slate-200 leading-relaxed">
-                            <b class="text-cyan-300 font-bold">মিডিয়া সম্মতি:</b> আমি সম্মতি দিচ্ছি যে আমার পরিচালিত ক্লাস সেশন, ডেমো বা প্রেজেন্টেশনের ভিডিও SkillNest-এর অফিসিয়াল ফেসবুক পেজ ও ব্র্যান্ডিং প্ল্যাটফর্মে প্রকাশ করা যাবে। *
+                            <b class="text-teal-300 font-bold">মিডিয়া সম্মতি:</b> আমি সম্মতি দিচ্ছি যে আমার পরিচালিত ক্লাস সেশন, ডেমো বা প্রেজেন্টেশনের ভিডিও SkillNest-এর অফিসিয়াল ফেসবুক পেজ ও ব্র্যান্ডিং প্ল্যাটফর্মে প্রকাশ করা যাবে। *
                         </span>
                     </label>
                 </div>
 
-                <button type="submit" class="w-full py-3.5 rounded-xl font-black text-sm bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:opacity-95 text-[#031326] shadow-xl shadow-cyan-500/30 transition-all flex items-center justify-center gap-2">
+                <button type="submit" class="w-full py-3.5 rounded-xl font-extrabold text-sm bg-gradient-to-r from-teal-400 via-sky-400 to-indigo-500 hover:opacity-95 text-[#0b1120] shadow-lg shadow-teal-500/25 transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-paper-plane text-xs"></i> আবেদন ও সম্মতি জমা দিন
                 </button>
             </form>
