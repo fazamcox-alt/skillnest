@@ -33,7 +33,7 @@
             color: #0f172a;
         }
 
-        /* Circular Logo Frame */
+        /* Perfectly Centered Circular Logo Frame */
         .brand-circle {
             width: 48px;
             height: 48px;
@@ -48,9 +48,9 @@
             flex-shrink: 0;
         }
 
-        /* Ring Zoom to Focus Circles */
+        /* Circular Center Crop for the 3 Rings */
         .zoomed-rings {
-            transform: scale(3.3) translateY(-1px);
+            transform: scale(3.4) translateY(-1px);
             transform-origin: center center;
             object-fit: cover;
         }
@@ -119,7 +119,7 @@
             </div>
         </div>
 
-        <!-- Center: Learn • Grow • Lead in the Navbar (Dark Area) -->
+        <!-- Center: Learn • Grow • Lead in the Navbar -->
         <div class="hidden md:flex items-center gap-2.5">
             <span class="px-3.5 py-1 rounded-full text-xs font-black bg-[#101c36] border border-cyan-500/40 text-cyan-300 flex items-center gap-1.5 shadow-sm">
                 <i class="fa-solid fa-book-open text-[10px] text-cyan-400"></i> Learn
@@ -150,39 +150,40 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 
-                <!-- Left Content: Theme Motto & Value Proposition -->
+                <!-- Left Content: Theme Motto First, Then Headline & Strategy -->
                 <div class="lg:col-span-7 text-left">
                     
-                    <!-- Core Theme Motto Badge (Replaced duplicate tagline) -->
-                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white text-xs md:text-sm font-bold shadow-md mb-5">
+                    <!-- Core Theme Motto Placed on Top of Headline (No Duplication) -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs md:text-sm font-black shadow-md mb-5">
                         <i class="fa-solid fa-quote-left text-yellow-300"></i>
                         <span>Knowledge is not power. Only applied knowledge is power.</span>
                     </div>
                     
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-sm">
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-5 drop-shadow-sm">
                         Driving sustainable growth through technology & skill training.
                     </h1>
 
-                    <p class="text-white/95 text-sm md:text-base leading-relaxed font-medium max-w-xl">
-                        আন্তর্জাতিক মানের স্পোকেন ইংলিশ, ব্রিটিশ ফোনোটিক্স ও এআই-ইন্টিগ্রেটেড সফট স্কিলস অর্জনের মাধ্যমে বাস্তব কর্মজীবনে নিজেকে যোগ্য হিসেবে গড়ে তুলুন।
+                    <!-- Clear, High-Visibility Explanation Paragraph -->
+                    <p class="text-white/95 text-base md:text-lg leading-relaxed font-semibold max-w-xl">
+                        Career Strategy & AI-Integrated Soft Skills: শুধু পুঁথিগত জ্ঞান নয়—আন্তর্জাতিক মানের স্পোকেন ইংলিশ ও প্রযুক্তিগত দক্ষতার বাস্তব প্রয়োগে গড়ে তুলুন আপনার ভবিষ্যৎ।
                     </p>
                 </div>
 
-                <!-- Right Side: Infographic Visual Roadmap -->
+                <!-- Right Side: Tailored Infographic Visuals -->
                 <div class="lg:col-span-5 flex flex-col gap-3.5">
                     
-                    <!-- Infographic 1: Spoken English & Phonetics -->
+                    <!-- Infographic 1: Spoken English & Global Neutral Accent -->
                     <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
                         <div class="w-12 h-12 rounded-xl bg-white text-blue-600 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
-                            <i class="fa-solid fa-headphones-simple"></i>
+                            <i class="fa-solid fa-earth-americas"></i>
                         </div>
                         <div>
-                            <h2 class="text-sm font-black text-white">Spoken English & British Phonetics</h2>
-                            <p class="text-xs text-blue-100 font-medium">ফ্লুয়েন্সি বৃদ্ধি ও অ্যাকসেন্ট দূরীকরণ ড্রিল</p>
+                            <h2 class="text-sm font-black text-white">Spoken English & Global Accent</h2>
+                            <p class="text-xs text-blue-100 font-medium">আন্তর্জাতিক মানের ফ্লুয়েন্সি ও জড়তাহীন উচ্চারণ</p>
                         </div>
                     </div>
 
-                    <!-- Infographic 2: Public Speaking & Presentation -->
+                    <!-- Infographic 2: Public Speaking & Dynamic Presentation -->
                     <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
                         <div class="w-12 h-12 rounded-xl bg-white text-emerald-600 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
                             <i class="fa-solid fa-microphone-lines"></i>
@@ -193,14 +194,14 @@
                         </div>
                     </div>
 
-                    <!-- Infographic 3: Career Strategy & Leadership -->
+                    <!-- Infographic 3: 12-Month Mastery (12 Life Skills & Leadership) -->
                     <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
                         <div class="w-12 h-12 rounded-xl bg-white text-amber-500 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
-                            <i class="fa-solid fa-chart-line"></i>
+                            <i class="fa-solid fa-calendar-check"></i>
                         </div>
                         <div>
-                            <h2 class="text-sm font-black text-white">Career Strategy & AI Skills</h2>
-                            <p class="text-xs text-blue-100 font-medium">এআই অটোমেশন ও বাস্তব কাজের ক্যারিয়ার রোডম্যাপ</p>
+                            <h2 class="text-sm font-black text-white">12 Months • 12 Core Life Skills</h2>
+                            <p class="text-xs text-blue-100 font-medium">প্রতি মাসে ১টি করে বাস্তব জীবন ও ক্যারিয়ার লিডারশিপ ট্রেনিং</p>
                         </div>
                     </div>
 
