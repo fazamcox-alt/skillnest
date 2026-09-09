@@ -13,47 +13,77 @@
         :root {
             --brand-cyan: #00f2fe;
             --brand-blue: #38bdf8;
-            --brand-emerald: #10b981;
-            --card-bg: rgba(15, 32, 59, 0.88);
-            --border-glow: rgba(0, 242, 254, 0.28);
+            --brand-gold: #f59e0b;
+            --card-bg: rgba(15, 27, 49, 0.90);
+            --border-glow: rgba(0, 242, 254, 0.35);
         }
 
         body {
             font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
             background-color: #061122;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 242, 254, 0.18) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.16) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(56, 189, 248, 0.15) 0px, transparent 55%);
+                radial-gradient(circle at 10% 10%, rgba(0, 242, 254, 0.22) 0px, transparent 45%),
+                radial-gradient(circle at 90% 15%, rgba(56, 189, 248, 0.22) 0px, transparent 45%),
+                radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.18) 0px, transparent 55%);
             background-attachment: fixed;
             color: #f1f5f9;
             min-height: 100vh;
         }
 
-        /* High Profile Glass Card */
+        /* Master Glass Card */
         .master-card {
             background: var(--card-bg);
             backdrop-filter: blur(28px);
             -webkit-backdrop-filter: blur(28px);
             border: 1.5px solid var(--border-glow);
-            box-shadow: 0 30px 60px -15px rgba(2, 8, 20, 0.85), 0 0 35px rgba(0, 242, 254, 0.12);
+            box-shadow: 0 30px 60px -15px rgba(2, 8, 20, 0.9), 0 0 35px rgba(0, 242, 254, 0.15);
         }
 
         /* Big Brand Logo Visual Frame */
         .brand-logo-frame {
-            background: radial-gradient(circle, #ffffff 60%, #e0f2fe 100%);
-            border: 2.5px solid #00f2fe;
-            box-shadow: 0 0 25px rgba(0, 242, 254, 0.5), inset 0 0 15px rgba(2, 132, 199, 0.2);
+            background: #ffffff;
+            border: 3px solid #00f2fe;
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.6), inset 0 0 12px rgba(2, 132, 199, 0.25);
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         .brand-logo-frame:hover {
-            transform: scale(1.06);
-            box-shadow: 0 0 35px rgba(0, 242, 254, 0.7);
+            transform: scale(1.08);
+            box-shadow: 0 0 45px rgba(0, 242, 254, 0.85);
         }
 
-        /* Input Elements */
+        /* Enlarged Logo Circles (Zoomed & Cropped Padding) */
+        .zoomed-logo {
+            transform: scale(1.68);
+            transform-origin: center center;
+            object-fit: contain;
+        }
+
+        /* Glowing Tagline */
+        .tagline-glow {
+            color: #ffffff;
+            text-shadow: 0 0 12px rgba(0, 242, 254, 0.8), 0 0 24px rgba(56, 189, 248, 0.5);
+            letter-spacing: 0.28em;
+        }
+
+        /* Radiant Golden Badges */
+        .gold-badge {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1.5px solid rgba(245, 158, 11, 0.65);
+            color: #fbbf24;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
+            transition: all 0.3s ease;
+        }
+        .gold-badge:hover {
+            background: rgba(245, 158, 11, 0.25);
+            border-color: #fbbf24;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+        }
+
+        /* Input Styling */
         .master-input {
-            background: #0b1c36 !important;
+            background: #0d1f3b !important;
             border: 1.5px solid #1e3a63 !important;
             color: #ffffff !important;
             transition: all 0.25s ease-in-out;
@@ -61,8 +91,8 @@
         .master-input:focus {
             outline: none !important;
             border-color: #00f2fe !important;
-            box-shadow: 0 0 16px rgba(0, 242, 254, 0.4) !important;
-            background: #0f274c !important;
+            box-shadow: 0 0 16px rgba(0, 242, 254, 0.45) !important;
+            background: #11284d !important;
         }
 
         /* Time Slot Radio Cards */
@@ -74,7 +104,7 @@
             border-color: #ffffff;
             color: #04101e;
             font-weight: 800;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.55);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
             transform: translateY(-2px);
         }
     </style>
@@ -88,15 +118,15 @@
         </button>
     </div>
 
-    <!-- Header Section with Distinct Large Logo -->
+    <!-- Header Section with Large Visible Circles & Radiant Taglines -->
     <header class="text-center max-w-xl mx-auto mb-8">
         <div class="flex items-center justify-center gap-5 mb-4">
             
-            <!-- Large, High-Clarity SkillNest Logo -->
-            <div class="w-24 h-24 rounded-3xl brand-logo-frame p-2 flex items-center justify-center flex-shrink-0 cursor-pointer">
+            <!-- Logo Frame (Enlarged Circles Inside) -->
+            <div class="w-24 h-24 rounded-3xl brand-logo-frame flex items-center justify-center flex-shrink-0 cursor-pointer overflow-hidden p-1">
                 <img src="https://i.ibb.co.com/60w8XYZR/logo.png" 
                      alt="SkillNest Logo" 
-                     class="w-full h-full object-contain filter drop-shadow-md"
+                     class="w-full h-full zoomed-logo"
                      onerror="this.onerror=null; this.src='https://i.ibb.co/60w8XYZR/logo.png';">
             </div>
 
@@ -104,22 +134,23 @@
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white flex items-center gap-2 drop-shadow-md">
                     SKILL<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-400">NEST</span>
                 </h1>
-                <p class="text-cyan-300 text-xs md:text-sm font-extrabold tracking-[0.26em] uppercase mt-1">
+                <!-- Glowing Radiant Tagline -->
+                <p class="tagline-glow text-xs md:text-sm font-black uppercase mt-1">
                     UNLEASH YOUR POTENTIAL
                 </p>
             </div>
         </div>
 
-        <!-- Pillar Value Badges -->
+        <!-- Radiant Golden Badges (Learn • Grow • Lead) -->
         <div class="flex items-center justify-center gap-3">
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0c2347] border border-cyan-400/40 text-cyan-300 flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-book-open text-[11px] text-cyan-400"></i> Learn
+            <span class="px-4 py-1.5 rounded-full text-xs font-bold gold-badge flex items-center gap-2">
+                <i class="fa-solid fa-book-open text-[11px]"></i> Learn
             </span>
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0c2347] border border-teal-400/40 text-teal-300 flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-seedling text-[11px] text-teal-400"></i> Grow
+            <span class="px-4 py-1.5 rounded-full text-xs font-bold gold-badge flex items-center gap-2">
+                <i class="fa-solid fa-seedling text-[11px]"></i> Grow
             </span>
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0c2347] border border-sky-400/40 text-sky-300 flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-award text-[11px] text-sky-400"></i> Lead
+            <span class="px-4 py-1.5 rounded-full text-xs font-bold gold-badge flex items-center gap-2">
+                <i class="fa-solid fa-award text-[11px]"></i> Lead
             </span>
         </div>
     </header>
