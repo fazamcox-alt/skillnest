@@ -12,19 +12,19 @@
     <style>
         body {
             font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0f19;
+            background-color: #080d1a;
             color: #ffffff;
             min-height: 100vh;
         }
 
-        /* Pure Tech Electric Blue Canvas (Matching Reference Site) */
+        /* Vibrant Electric Tech Gradient Canvas */
         .tech-canvas {
-            background: linear-gradient(135deg, #0264e3 0%, #0076ff 50%, #00b4d8 100%);
+            background: linear-gradient(135deg, #025cdb 0%, #0076ff 50%, #00b4d8 100%);
             border-radius: 32px;
             box-shadow: 0 25px 70px rgba(0, 118, 255, 0.35);
         }
 
-        /* Crisp Glass Card for Admission Form */
+        /* Clean High-Contrast Glass Card for Admission Form */
         .admission-card {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
@@ -33,26 +33,47 @@
             color: #0f172a;
         }
 
-        /* Pure Circular Logo Frame */
+        /* Circular Logo Frame */
         .brand-circle {
-            width: 44px;
-            height: 44px;
+            width: 52px;
+            height: 52px;
             border-radius: 9999px;
             background: #ffffff;
-            border: 2px solid #38bdf8;
+            border: 2.5px solid #00f2fe;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+            flex-shrink: 0;
         }
 
-        /* Clean High Contrast Form Input */
+        /* Ring Zoom to Focus Circles */
+        .zoomed-rings {
+            transform: scale(3.2) translateY(-1px);
+            transform-origin: center center;
+            object-fit: cover;
+        }
+
+        /* Infographic Card Styling */
+        .info-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form Inputs */
         .clean-input {
             background: #f8fafc !important;
             border: 1.5px solid #cbd5e1 !important;
             color: #0f172a !important;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease;
         }
         .clean-input:focus {
             outline: none !important;
@@ -61,7 +82,7 @@
             background: #ffffff !important;
         }
 
-        /* Selection Chips */
+        /* Time Slot Radios */
         .chip-option input[type="radio"] {
             display: none;
         }
@@ -70,36 +91,52 @@
             border-color: #0076ff;
             color: #ffffff;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0, 118, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
             transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="pb-20">
 
-    <!-- Global Top Navigation Bar (Pure Sleek Enterprise Look) -->
-    <nav class="w-full bg-[#070b14] border-b border-slate-800/80 px-6 md:px-12 py-4 flex items-center justify-between sticky top-0 z-50">
-        <!-- Brand Left Alignment -->
-        <div class="flex items-center gap-3">
+    <!-- Global Top Navigation Bar -->
+    <nav class="w-full bg-[#070b14] border-b border-slate-800/80 px-6 md:px-12 py-3 flex items-center justify-between sticky top-0 z-50">
+        
+        <!-- Left: Big Circles Logo + Skillnest + Unleash Your Potential -->
+        <div class="flex items-center gap-3.5">
             <div class="brand-circle">
                 <img src="https://i.ibb.co.com/60w8XYZR/logo.png" 
                      alt="SkillNest Logo" 
-                     class="w-full h-full object-cover scale-[2.2] -translate-y-[2px]"
+                     class="w-full h-full zoomed-rings"
                      onerror="this.onerror=null; this.src='https://i.ibb.co/60w8XYZR/logo.png';">
             </div>
             <div class="flex flex-col">
                 <span class="text-2xl font-black tracking-tight text-white flex items-center leading-none">
                     Skill<span class="text-cyan-400">nest</span>
                 </span>
-                <span class="text-[10px] tracking-[0.25em] text-slate-400 font-bold uppercase mt-1">
-                    Unleash Your Potential
+                <span class="text-[10px] tracking-[0.22em] text-cyan-300 font-extrabold uppercase mt-1">
+                    UNLEASH YOUR POTENTIAL
                 </span>
             </div>
         </div>
 
-        <!-- Teacher CTA Right Alignment -->
+        <!-- Center: Learn • Grow • Lead -->
+        <div class="hidden md:flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-black bg-[#101b33] border border-cyan-500/40 text-cyan-300 flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-book-open text-[10px] text-cyan-400"></i> Learn
+            </span>
+            <span class="text-slate-500 text-xs">•</span>
+            <span class="px-3 py-1 rounded-full text-xs font-black bg-[#101b33] border border-emerald-500/40 text-emerald-300 flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-seedling text-[10px] text-emerald-400"></i> Grow
+            </span>
+            <span class="text-slate-500 text-xs">•</span>
+            <span class="px-3 py-1 rounded-full text-xs font-black bg-[#101b33] border border-amber-500/40 text-amber-300 flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-award text-[10px] text-amber-400"></i> Lead
+            </span>
+        </div>
+
+        <!-- Right: Teacher Portal CTA -->
         <div>
-            <button onclick="toggleTeacherModal(true)" class="text-xs md:text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 px-5 py-2.5 rounded-full transition-all duration-200 shadow-md flex items-center gap-2">
+            <button onclick="toggleTeacherModal(true)" class="text-xs md:text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 px-5 py-2 rounded-full transition-all duration-200 shadow-md flex items-center gap-2">
                 <i class="fa-solid fa-chalkboard-user"></i> শিক্ষক হিসেবে আবেদন
             </button>
         </div>
@@ -108,53 +145,77 @@
     <!-- Main Container -->
     <div class="max-w-6xl mx-auto px-4 mt-8">
         
-        <!-- Vibrant Electric Blue Hero Banner (Left-Aligned Structure) -->
-        <div class="tech-canvas p-8 md:p-14 mb-10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+        <!-- Vibrant Hero Banner with Philosophy & Infographics -->
+        <div class="tech-canvas p-8 md:p-12 mb-10 relative overflow-hidden">
             
-            <!-- Left Side Content: Clean & Powerful Typography -->
-            <div class="max-w-2xl text-left z-10">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-black tracking-wider text-white uppercase mb-5 border border-white/20">
-                    <i class="fa-solid fa-bolt text-yellow-300"></i> UNLEASH YOUR POTENTIAL
-                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 
-                <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-5 drop-shadow-sm">
-                    Driving sustainable growth through technology & skill training.
-                </h1>
-                
-                <p class="text-white/90 text-sm md:text-base leading-relaxed mb-6 font-medium max-w-lg">
-                    আন্তর্জাতিক মানের স্পোকেন ইংলিশ, ব্রিটিশ ফোনোটিক্স ও এআই-ইন্টিগ্রেটেড সফট স্কিলস অর্জনের মাধ্যমে ক্যারিয়ারের নতুন দুয়ার উন্মোচন করুন।
-                </p>
+                <!-- Left Content: Vision & Core Theme Philosophy -->
+                <div class="lg:col-span-7 text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-black tracking-wider text-white uppercase mb-4 border border-white/20">
+                        <i class="fa-solid fa-bolt text-yellow-300"></i> UNLEASH YOUR POTENTIAL
+                    </div>
+                    
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-sm">
+                        Driving sustainable growth through technology & skill training.
+                    </h1>
+                    
+                    <!-- Core Theme Motto (Exact Wording) -->
+                    <div class="p-4 rounded-2xl bg-[#031c44]/50 border border-cyan-300/30 mb-6 backdrop-blur-md shadow-lg">
+                        <p class="text-sm md:text-base text-cyan-200 font-extrabold flex items-center gap-2.5">
+                            <i class="fa-solid fa-quote-left text-yellow-300 text-lg"></i>
+                            <span>Knowledge is not power. Only applied knowledge is power.</span>
+                        </p>
+                    </div>
 
-                <!-- Value Badges -->
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 rounded-full text-xs font-black bg-white text-blue-800 shadow-md flex items-center gap-2">
-                        <i class="fa-solid fa-book-open text-blue-600"></i> Learn
-                    </span>
-                    <span class="px-4 py-2 rounded-full text-xs font-black bg-white text-blue-800 shadow-md flex items-center gap-2">
-                        <i class="fa-solid fa-seedling text-emerald-600"></i> Grow
-                    </span>
-                    <span class="px-4 py-2 rounded-full text-xs font-black bg-white text-blue-800 shadow-md flex items-center gap-2">
-                        <i class="fa-solid fa-award text-amber-500"></i> Lead
-                    </span>
+                    <p class="text-white/90 text-sm leading-relaxed font-medium">
+                        শুধু পুঁথিগত জ্ঞান নয়—আন্তর্জাতিক মানের স্পোকেন ইংলিশ, ব্রিটিশ ফোনোটিক্স ও এআই-ইন্টিগ্রেটেড সফট স্কিলস অর্জনের মাধ্যমে ক্যারিয়ারের বাস্তব ক্ষেত্রে নিজের অবস্থান নিশ্চিত করুন।
+                    </p>
                 </div>
-            </div>
 
-            <!-- Right Side: Clean Visual Space (Matching Screenshot) -->
-            <div class="hidden lg:flex flex-col gap-4 opacity-95 pr-6">
-                <div class="w-16 h-16 rounded-2xl bg-white shadow-2xl flex items-center justify-center text-blue-600 font-black text-2xl hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-brain"></i>
+                <!-- Right Infographics: Spoken English, Public Speaking & Career Roadmap -->
+                <div class="lg:col-span-5 flex flex-col gap-3.5">
+                    
+                    <!-- Infographic 1: Spoken English & Phonetics -->
+                    <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
+                        <div class="w-12 h-12 rounded-xl bg-white text-blue-600 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-headphones-simple"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-black text-white">Spoken English & British Phonetics</h2>
+                            <p class="text-xs text-blue-100 font-medium">ফ্লুয়েন্সি বৃদ্ধি ও অ্যাকসেন্ট দূরীকরণ ড্রিল</p>
+                        </div>
+                    </div>
+
+                    <!-- Infographic 2: Public Speaking & Presentation -->
+                    <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
+                        <div class="w-12 h-12 rounded-xl bg-white text-emerald-600 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-black text-white">Public Speaking & Confidence</h2>
+                            <p class="text-xs text-blue-100 font-medium">মঞ্চভীতি দূর করে প্রভাবশালী প্রেজেন্টেশন স্কিল</p>
+                        </div>
+                    </div>
+
+                    <!-- Infographic 3: Career Strategy & Leadership -->
+                    <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
+                        <div class="w-12 h-12 rounded-xl bg-white text-amber-500 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-black text-white">Career Strategy & AI Skills</h2>
+                            <p class="text-xs text-blue-100 font-medium">এআই অটোমেশন ও বাস্তব কাজের ক্যারিয়ার রোডম্যাপ</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="w-14 h-14 rounded-2xl bg-white shadow-2xl flex items-center justify-center text-indigo-600 font-black text-xl ml-8 hover:scale-110 transition-transform">
-                    <i class="fa-brands fa-python"></i>
-                </div>
-                <div class="w-16 h-16 rounded-2xl bg-white shadow-2xl flex items-center justify-center text-cyan-600 font-black text-2xl hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-microphone-lines"></i>
-                </div>
+
             </div>
 
         </div>
 
-        <!-- Admission Form (Centered, Distinct & High-End) -->
+        <!-- Admission Form (Clean, Modern & High-Contrast) -->
         <main class="w-full max-w-3xl mx-auto admission-card p-6 md:p-12 relative">
             
             <!-- Progress Bar -->
