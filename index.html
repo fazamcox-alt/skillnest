@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillNest | Unleash Your Potential</title>
-    <!-- Tailwind CSS & Modern Web Fonts -->
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,18 +34,19 @@
             color: #0f172a;
         }
 
-        /* Pure Geometric Circular Frame */
+        /* Pure Geometric Circular Frame (Completely Clean, Zero Underglow Artifacts) */
         .brand-circle {
-            width: 46px;
-            height: 46px;
+            width: 48px;
+            height: 48px;
             border-radius: 9999px;
             background: #ffffff;
             border: 2px solid #00f2fe;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
             flex-shrink: 0;
+            padding: 4px;
         }
 
         /* Right Column Feature Cards */
@@ -106,24 +107,26 @@
     <!-- Global Top Navigation Bar -->
     <nav class="w-full bg-[#070b14] border-b border-slate-800/80 px-6 md:px-12 py-3.5 flex items-center justify-between sticky top-0 z-50">
         
-        <!-- Left: Mathematically Perfect Vector Logo + SkillNest + Golden Tagline -->
+        <!-- Left: Exact Match 3-Ring SVG Vector + High Contrast SkillNest + Golden Tagline -->
         <div class="flex items-center gap-3.5">
             <div class="brand-circle">
-                <!-- 100% Symmetrical 3-Ring SVG Vector -->
-                <svg viewBox="0 0 100 100" class="w-8 h-8">
-                    <!-- Center Core Solid Circle -->
-                    <circle cx="50" cy="50" r="13" fill="#0052d4" />
-                    <!-- Middle Cyan Arc Ring -->
-                    <circle cx="50" cy="50" r="26" fill="none" stroke="#00d2ff" stroke-width="7" stroke-dasharray="110 30" stroke-linecap="round" transform="rotate(-40 50 50)" />
-                    <!-- Outer Royal Blue Orbit Ring -->
-                    <circle cx="50" cy="50" r="39" fill="none" stroke="#0052d4" stroke-width="7" stroke-dasharray="160 50" stroke-linecap="round" transform="rotate(130 50 50)" />
+                <!-- SkillNest Pure Geometric Logo (Never depends on external image hosting) -->
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                    <!-- Core Center Dot -->
+                    <circle cx="50" cy="50" r="10" fill="#0052d4" />
+                    <!-- Inner Swirl Dynamic Ring Pair -->
+                    <path d="M 32 50 A 18 18 0 0 1 68 50" fill="none" stroke="#00d2ff" stroke-width="7" stroke-linecap="round" />
+                    <path d="M 68 50 A 18 18 0 0 1 32 50" fill="none" stroke="#0052d4" stroke-width="7" stroke-linecap="round" />
+                    <!-- Outer Orbit Ring Pair -->
+                    <path d="M 18 50 A 32 32 0 0 1 82 50" fill="none" stroke="#0052d4" stroke-width="7" stroke-linecap="round" stroke-dasharray="85 20" />
+                    <path d="M 82 50 A 32 32 0 0 1 18 50" fill="none" stroke="#00d2ff" stroke-width="7" stroke-linecap="round" stroke-dasharray="85 20" />
                 </svg>
             </div>
             <div class="flex flex-col">
                 <span class="text-2xl font-black tracking-tight text-white flex items-center leading-none">
                     Skill<span class="text-[#00f2fe] drop-shadow-[0_0_8px_rgba(0,242,254,0.35)]">Nest</span>
                 </span>
-                <span class="text-[11px] tracking-[0.24em] text-[#fbbf24] font-black uppercase mt-1 drop-shadow-sm">
+                <span class="text-[11.5px] tracking-[0.24em] text-[#fbbf24] font-black uppercase mt-1 drop-shadow-sm">
                     UNLEASH YOUR POTENTIAL
                 </span>
             </div>
@@ -179,7 +182,7 @@
                     </p>
                 </div>
 
-                <!-- Right Feature Cards Column (~38% Weight) -->
+                <!-- Right Feature Cards Column (The Exact 4 Points) -->
                 <div class="lg:col-span-5 flex flex-col gap-3">
                     
                     <!-- 1. Spoken English & Global Accent -->
