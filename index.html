@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillNest | Unleash Your Potential</title>
-    <!-- Tailwind CSS & Google Fonts -->
+    <!-- Tailwind CSS & Modern Web Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
-            background-color: #080d1a;
+            background-color: #070b14;
             color: #ffffff;
             min-height: 100vh;
         }
@@ -24,7 +24,7 @@
             box-shadow: 0 25px 70px rgba(0, 118, 255, 0.35);
         }
 
-        /* Clean High-Contrast Glass Card for Admission Form */
+        /* Clean High-Contrast White Card for Admission Form */
         .admission-card {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
@@ -33,26 +33,29 @@
             color: #0f172a;
         }
 
-        /* Perfectly Centered Circular Logo Frame */
+        /* Pure Circular Centered Logo Frame */
         .brand-circle {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 9999px;
             background: #ffffff;
-            border: 2px solid #00f2fe;
+            border: 2.5px solid #00f2fe;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 16px rgba(0, 242, 254, 0.5);
             flex-shrink: 0;
+            position: relative;
         }
 
-        /* Circular Center Crop for the 3 Rings */
+        /* Surgical Center Zoom on the 3 Rings (Completely cuts out white space & bottom text) */
         .zoomed-rings {
-            transform: scale(3.4) translateY(-1px);
-            transform-origin: center center;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            transform: scale(3.5) translateY(-1px);
+            transform-origin: center center;
         }
 
         /* Infographic Card Styling */
@@ -66,6 +69,18 @@
             transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.24);
             box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Uniform Balanced Badges (Learn, Grow, Lead) */
+        .balanced-badge {
+            background: rgba(251, 191, 36, 0.15);
+            border: 1.5px solid rgba(251, 191, 36, 0.5);
+            color: #fbbf24;
+            transition: all 0.2s ease;
+        }
+        .balanced-badge:hover {
+            background: rgba(251, 191, 36, 0.25);
+            border-color: #fbbf24;
         }
 
         /* Form Inputs */
@@ -101,36 +116,37 @@
     <!-- Global Top Navigation Bar -->
     <nav class="w-full bg-[#070b14] border-b border-slate-800/80 px-6 md:px-12 py-3.5 flex items-center justify-between sticky top-0 z-50">
         
-        <!-- Left: Centered Rings Logo + SkillNest + UNLEASH YOUR POTENTIAL -->
+        <!-- Left: Centered Rings Logo + SkillNest + Radiant Golden UNLEASH YOUR POTENTIAL -->
         <div class="flex items-center gap-3.5">
             <div class="brand-circle">
                 <img src="https://i.ibb.co.com/60w8XYZR/logo.png" 
                      alt="SkillNest Logo" 
-                     class="w-full h-full zoomed-rings"
+                     class="zoomed-rings"
                      onerror="this.onerror=null; this.src='https://i.ibb.co/60w8XYZR/logo.png';">
             </div>
             <div class="flex flex-col">
                 <span class="text-2xl font-black tracking-tight text-white flex items-center leading-none">
                     Skill<span class="text-cyan-400">Nest</span>
                 </span>
-                <span class="text-[10px] tracking-[0.22em] text-cyan-300 font-extrabold uppercase mt-1">
+                <!-- Highly Visible Golden Yellow Tagline -->
+                <span class="text-[11px] tracking-[0.24em] text-amber-300 font-black uppercase mt-1 drop-shadow-sm">
                     UNLEASH YOUR POTENTIAL
                 </span>
             </div>
         </div>
 
-        <!-- Center: Learn • Grow • Lead in the Navbar -->
+        <!-- Center: Learn • Grow • Lead (Balanced & Harmonized) -->
         <div class="hidden md:flex items-center gap-2.5">
-            <span class="px-3.5 py-1 rounded-full text-xs font-black bg-[#101c36] border border-cyan-500/40 text-cyan-300 flex items-center gap-1.5 shadow-sm">
-                <i class="fa-solid fa-book-open text-[10px] text-cyan-400"></i> Learn
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold balanced-badge flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-book-open text-[10px]"></i> Learn
             </span>
             <span class="text-slate-600 text-xs">•</span>
-            <span class="px-3.5 py-1 rounded-full text-xs font-black bg-[#101c36] border border-emerald-500/40 text-emerald-300 flex items-center gap-1.5 shadow-sm">
-                <i class="fa-solid fa-seedling text-[10px] text-emerald-400"></i> Grow
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold balanced-badge flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-seedling text-[10px]"></i> Grow
             </span>
             <span class="text-slate-600 text-xs">•</span>
-            <span class="px-3.5 py-1 rounded-full text-xs font-black bg-[#101c36] border border-amber-500/40 text-amber-300 flex items-center gap-1.5 shadow-sm">
-                <i class="fa-solid fa-award text-[10px] text-amber-400"></i> Lead
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold balanced-badge flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-award text-[10px]"></i> Lead
             </span>
         </div>
 
@@ -150,7 +166,7 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 
-                <!-- Left Content: Theme Motto First, Then Headline & Strategy -->
+                <!-- Left Content: Theme Motto First, Then Headline & Explanation -->
                 <div class="lg:col-span-7 text-left">
                     
                     <!-- Core Theme Motto Placed on Top of Headline (No Duplication) -->
@@ -163,23 +179,23 @@
                         Driving sustainable growth through technology & skill training.
                     </h1>
 
-                    <!-- Clear, High-Visibility Explanation Paragraph -->
+                    <!-- Clear, High-Visibility Explanation Paragraph (No British Phonetics) -->
                     <p class="text-white/95 text-base md:text-lg leading-relaxed font-semibold max-w-xl">
-                        Career Strategy & AI-Integrated Soft Skills: শুধু পুঁথিগত জ্ঞান নয়—আন্তর্জাতিক মানের স্পোকেন ইংলিশ ও প্রযুক্তিগত দক্ষতার বাস্তব প্রয়োগে গড়ে তুলুন আপনার ভবিষ্যৎ।
+                        আন্তর্জাতিক মানের স্পোকেন ইংলিশ, ডায়নামিক প্রেজেন্টেশন এবং এআই-ইন্টিগ্রেটেড সফট স্কিলস অর্জনের মাধ্যমে কর্মজীবনে নিজের অবস্থান সুদৃঢ় করুন।
                     </p>
                 </div>
 
                 <!-- Right Side: Tailored Infographic Visuals -->
                 <div class="lg:col-span-5 flex flex-col gap-3.5">
                     
-                    <!-- Infographic 1: Spoken English & Global Neutral Accent -->
+                    <!-- Infographic 1: Spoken English & Global Neutral Accent (British Phonetics Removed) -->
                     <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
                         <div class="w-12 h-12 rounded-xl bg-white text-blue-600 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
                             <i class="fa-solid fa-earth-americas"></i>
                         </div>
                         <div>
                             <h2 class="text-sm font-black text-white">Spoken English & Global Accent</h2>
-                            <p class="text-xs text-blue-100 font-medium">আন্তর্জাতিক মানের ফ্লুয়েন্সি ও জড়তাহীন উচ্চারণ</p>
+                            <p class="text-xs text-blue-100 font-medium">আন্তর্জাতিক মানের সাবলীলতা ও জড়তাহীন উচ্চারণ</p>
                         </div>
                     </div>
 
@@ -190,18 +206,18 @@
                         </div>
                         <div>
                             <h2 class="text-sm font-black text-white">Public Speaking & Confidence</h2>
-                            <p class="text-xs text-blue-100 font-medium">মঞ্চভীতি দূর করে প্রভাবশালী প্রেজেন্টেশন স্কিল</p>
+                            <p class="text-xs text-blue-100 font-medium">মঞ্চভীতি দূর করে আত্মবিশ্বাসী ও প্রভাবশালী প্রেজেন্টেশন</p>
                         </div>
                     </div>
 
-                    <!-- Infographic 3: 12-Month Mastery (12 Life Skills & Leadership) -->
+                    <!-- Infographic 3: Career Strategy & AI-Integrated Soft Skills -->
                     <div class="info-card p-3.5 rounded-2xl flex items-center gap-4 text-left">
                         <div class="w-12 h-12 rounded-xl bg-white text-amber-500 flex items-center justify-center font-black text-xl shadow-md flex-shrink-0">
-                            <i class="fa-solid fa-calendar-check"></i>
+                            <i class="fa-solid fa-brain"></i>
                         </div>
                         <div>
-                            <h2 class="text-sm font-black text-white">12 Months • 12 Core Life Skills</h2>
-                            <p class="text-xs text-blue-100 font-medium">প্রতি মাসে ১টি করে বাস্তব জীবন ও ক্যারিয়ার লিডারশিপ ট্রেনিং</p>
+                            <h2 class="text-sm font-black text-white">Career Strategy & AI Skills</h2>
+                            <p class="text-xs text-blue-100 font-medium">এআই অটোমেশন ও বাস্তব কাজের ক্যারিয়ার রোডম্যাপ</p>
                         </div>
                     </div>
 
