@@ -1,50 +1,758 @@
-<!-- ক্লাসের সময় (১.৫ ঘণ্টার শিফট) -->
-<div class="p-5 rounded-2xl bg-blue-50/70 border border-blue-200 space-y-4">
-    <label class="block text-xs font-black text-blue-900 uppercase tracking-wide flex items-center gap-2">
-        <i class="fa-regular fa-clock text-blue-600"></i> ক্লাসের ফ্রি সময় (প্রতিদিন ১.৫ ঘণ্টার শিফট নির্বাচন করুন) *
-    </label>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillNest | Unleash Your Potential</title>
+    <!-- Tailwind CSS & Modern Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Morning Shift -->
-    <div>
-        <span class="text-xs font-bold text-amber-600 block mb-2"><i class="fa-solid fa-sun"></i> সকালের শিফট:</span>
-        <div class="grid grid-cols-2 gap-3 text-xs chip-option">
-            <div>
-                <input type="radio" name="batch_slot" id="slot_m1" value="Morning 7:00 AM - 8:30 AM" required>
-                <label for="slot_m1" class="block text-center py-3.5 px-3 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
-                    সকাল ৭:০০ - ৮:৩০
-                </label>
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+            background-color: #070b14;
+            color: #ffffff;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* 62:38 Balanced Electric Canvas */
+        .tech-canvas {
+            background: linear-gradient(135deg, #025cdb 0%, #0076ff 50%, #00b4d8 100%);
+            border-radius: 32px;
+            box-shadow: 0 25px 70px rgba(0, 118, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* High-Contrast White Admission Card */
+        .admission-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 28px;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+            color: #0f172a;
+        }
+
+        /* Pure Geometric Circular Frame (Centered Vector) */
+        .brand-circle {
+            width: 46px;
+            height: 46px;
+            border-radius: 9999px;
+            background: #ffffff;
+            border: 2px solid #00f2fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
+            flex-shrink: 0;
+            padding: 4px;
+        }
+
+        /* Feature Cards */
+        .info-card {
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.25s ease;
+        }
+        .info-card:hover {
+            transform: translateX(4px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Storytelling Glass Panels */
+        .glass-panel {
+            background: rgba(16, 28, 54, 0.65);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+        }
+
+        /* Balanced Golden Badges */
+        .balanced-badge {
+            background: rgba(251, 191, 36, 0.14);
+            border: 1.5px solid rgba(251, 191, 36, 0.5);
+            color: #fbbf24;
+            transition: all 0.2s ease;
+        }
+
+        /* Form Inputs */
+        .clean-input {
+            background: #f8fafc !important;
+            border: 1.5px solid #cbd5e1 !important;
+            color: #0f172a !important;
+            transition: all 0.2s ease;
+        }
+        .clean-input:focus {
+            outline: none !important;
+            border-color: #0076ff !important;
+            box-shadow: 0 0 12px rgba(0, 118, 255, 0.25) !important;
+            background: #ffffff !important;
+        }
+
+        /* Radio Chips */
+        .chip-option input[type="radio"] {
+            display: none;
+        }
+        .chip-option input[type="radio"]:checked + label {
+            background: #0076ff;
+            border-color: #0076ff;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="pb-20">
+
+    <!-- Global Top Navigation Bar -->
+    <nav class="w-full bg-[#070b14] border-b border-slate-800/80 px-6 md:px-12 py-3.5 flex items-center justify-between sticky top-0 z-50">
+        
+        <!-- Left: Centered Rings Logo + SkillNest + Golden Tagline -->
+        <div class="flex items-center gap-3.5">
+            <div class="brand-circle">
+                <svg viewBox="0 0 100 100" class="w-8 h-8">
+                    <circle cx="50" cy="50" r="13" fill="#0052d4" />
+                    <circle cx="50" cy="50" r="26" fill="none" stroke="#00d2ff" stroke-width="7" stroke-dasharray="110 30" stroke-linecap="round" transform="rotate(-40 50 50)" />
+                    <circle cx="50" cy="50" r="39" fill="none" stroke="#0052d4" stroke-width="7" stroke-dasharray="160 50" stroke-linecap="round" transform="rotate(130 50 50)" />
+                </svg>
             </div>
-            <div>
-                <input type="radio" name="batch_slot" id="slot_m2" value="Morning 8:00 AM - 9:30 AM">
-                <label for="slot_m2" class="block text-center py-3.5 px-3 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
-                    সকাল ৮:০০ - ৯:৩০
-                </label>
+            <div class="flex flex-col">
+                <span class="text-2xl font-black tracking-tight text-white flex items-center leading-none">
+                    Skill<span class="text-[#00f2fe] drop-shadow-[0_0_8px_rgba(0,242,254,0.35)]">Nest</span>
+                </span>
+                <span class="text-[11px] tracking-[0.24em] text-[#fbbf24] font-black uppercase mt-1 drop-shadow-sm">
+                    UNLEASH YOUR POTENTIAL
+                </span>
             </div>
+        </div>
+
+        <!-- Center: Learn • Grow • Lead -->
+        <div class="hidden md:flex items-center gap-2.5">
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold balanced-badge flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-book-open text-[10px]"></i> Learn
+            </span>
+            <span class="text-slate-600 text-xs">•</span>
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold balanced-badge flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-seedling text-[10px]"></i> Grow
+            </span>
+            <span class="text-slate-600 text-xs">•</span>
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold balanced-badge flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-award text-[10px]"></i> Lead
+            </span>
+        </div>
+
+        <!-- Right: Jump to Admission Form -->
+        <div class="flex items-center gap-3">
+            <a href="#admissionSection" class="text-xs md:text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 px-5 py-2.5 rounded-full transition-all duration-200 shadow-md flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-yellow-300"></i> ভর্তি আবেদন করুন
+            </a>
+            <button onclick="toggleTeacherModal(true)" class="hidden sm:flex text-xs md:text-sm font-bold text-slate-300 hover:text-white border border-slate-700 hover:border-slate-500 px-4 py-2 rounded-full transition-all">
+                শিক্ষক আবেদন
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-6xl mx-auto px-4 mt-8 space-y-16">
+        
+        <!-- SECTION 1: Vibrant Electric Blue Hero Banner -->
+        <div class="tech-canvas p-8 md:p-12 relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                
+                <!-- Left Content Column (~62%) -->
+                <div class="lg:col-span-7 text-left flex flex-col items-start">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs md:text-sm font-black shadow-md mb-5">
+                        <i class="fa-solid fa-quote-left text-yellow-300"></i>
+                        <span>Knowledge is not power. Only applied knowledge is power.</span>
+                    </div>
+                    
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-5 drop-shadow-sm">
+                        Driving sustainable growth through technology & skill training.
+                    </h1>
+
+                    <p class="text-white/95 text-base md:text-lg leading-relaxed font-semibold max-w-xl">
+                        আন্তর্জাতিক মানের স্পোকেন ইংলিশ, ডায়নামিক প্রেজেন্টেশন এবং এআই-ইন্টিগ্রেটেড সফট স্কিলস অর্জনের মাধ্যমে বাস্তব জীবনে নিজের অবস্থান ও ক্যারিয়ার সাফল্য নিশ্চিত করুন।
+                    </p>
+                </div>
+
+                <!-- Right Feature Cards Column (~38%) -->
+                <div class="lg:col-span-5 flex flex-col gap-3">
+                    <div class="info-card p-3 rounded-2xl flex items-center gap-3.5 text-left">
+                        <div class="w-11 h-11 rounded-xl bg-white text-blue-600 flex items-center justify-center font-black text-lg shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-black text-white">Spoken English & Global Accent</h2>
+                            <p class="text-[11px] text-blue-100 font-medium">আন্তর্জাতিক মানের সাবলীলতা ও জড়তাহীন উচ্চারণ ড্রিল</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-3 rounded-2xl flex items-center gap-3.5 text-left">
+                        <div class="w-11 h-11 rounded-xl bg-white text-emerald-600 flex items-center justify-center font-black text-lg shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-black text-white">Public Speaking</h2>
+                            <p class="text-[11px] text-blue-100 font-medium">মঞ্চভীতি দূরীকরণ ও আকর্ষণীয় বক্তব্য উপস্থাপনা কৌশল</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-3 rounded-2xl flex items-center gap-3.5 text-left">
+                        <div class="w-11 h-11 rounded-xl bg-white text-amber-500 flex items-center justify-center font-black text-lg shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-black text-white">Career Strategy & Guideline</h2>
+                            <p class="text-[11px] text-blue-100 font-medium">বাস্তবমুখী ক্যারিয়ার পরিকল্পনা, মেন্টরশিপ ও দিকনির্দেশনা</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-3 rounded-2xl flex items-center gap-3.5 text-left border-cyan-300/40">
+                        <div class="w-11 h-11 rounded-xl bg-cyan-400 text-slate-900 flex items-center justify-center font-black text-lg shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-black text-white">AI-Integrated Soft Skills</h2>
+                            <p class="text-[11px] text-cyan-100 font-medium">এআই টুলস ব্যবহার করে উৎপাদনশীলতা বৃদ্ধি ও কাজকে সহজ করার দক্ষতা</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION 2: পার্ট ১ - দৈনন্দিন স্পোকেন ড্রিল ও প্র্যাকটিস ইকোসিস্টেম -->
+        <div class="glass-panel p-8 md:p-12 text-left">
+            <div class="max-w-2xl mb-8">
+                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-950/40 border border-cyan-500/30 px-3 py-1 rounded-full">Part 1: Daily Practice Ecosystem</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-3 mb-2">প্রতিদিনের স্পোকেন ড্রিল, প্র্যাকটিস পার্টনার ও ক্যামেরা অ্যাসাইনমেন্ট</h2>
+                <p class="text-xs md:text-sm text-slate-300">কোনো প্রথাগত রুলস মুখস্থ নয়; প্রতিদিনের বাস্তব প্র্যাকটিস দিয়ে জিভ ও চোখের জড়তা চিরতরে ভাঙা হবে।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- 1. Live Google Meet Class -->
+                <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-cyan-400 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-1.5">প্রতিদিন ১-১.৫ ঘণ্টার লাইভ ড্রিল</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        সকাল (৭:০০/৮:০০ টা) অথবা বিকাল-সান্ধ্য শিফটে সরাসরি গুগল মিটে লাইভ প্র্যাকটিস। ক্লাসের ৬০% সময় শিক্ষার্থী নিজে কথা বলবে, বাড়ির কোনো পড়ার বোঝা নেই।
+                    </p>
+                </div>
+
+                <!-- 2. WhatsApp Voice Lab & Peer Room -->
+                <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-1.5">ভয়েস ল্যাব ও প্র্যাকটিস পার্টনার</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        হোয়াটসঅ্যাপ গ্রুপে প্র্যাকটিস পার্টনারের সাথে ভয়েস কল লিঙ্ক ও অডিও ড্রিল। গ্রুপে ভয়েস রেকর্ড দিলে ট্রেইনার ও সহপাঠীরা সাথে সাথে ভুল শুধরে ফিডব্যাক দেবে।
+                    </p>
+                </div>
+
+                <!-- 3. Friday Video Presentation (Self-Correction Method) -->
+                <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-1.5">ফ্রাইডে ক্যামেরা প্রেজেন্টেশন</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        মোবাইল ট্রাইপডে রেখে সরাসরি ক্যামেরার লেন্সের দিকে তাকিয়ে আই-কন্টাক্ট প্র্যাকটিস। সারাসপ্তাহ একাধিকবার রেকর্ড ও ভুল ডিলিট করে সেরা ভিডিওটি প্রতি শুক্রবার রাত ১২টার মধ্যে জমা দেওয়া বাধ্যতামূলক (ফেসবুক পেজে পাবলিশ হবে)।
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: পার্ট ২ - ১২ মাসে ১২টি মাস্টার লাইফ স্কিল -->
+        <div class="glass-panel p-8 md:p-12 text-left">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-950/40 border border-amber-500/30 px-3 py-1 rounded-full">Part 2: 12-Month Mastery Curriculum</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-3 mb-2">১২ মাসে ১২টি মাস্টার লাইফ স্কিল ট্রেনিং</h2>
+                <p class="text-xs md:text-sm text-slate-400">প্রতি মাসে ১টি করে বাস্তব জীবন, ব্যবসা ও ভবিষ্যৎ আয়ের কার্যকরী রূপরেখা</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                
+                <!-- Month 1: Tiger Focus & Screen Addiction -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-cyan-500/30 bg-cyan-950/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">মাস ১</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">টাইগার ফোকাস (Tiger Focus)</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">মোবাইল ও সোশ্যাল মিডিয়া আসক্তি দূরীকরণ, স্ক্রিন টাইম কমানো, মস্তিষ্ক পরিষ্কার করা এবং একটানা ফোকাস ধরে রাখার কৌশল।</p>
+                </div>
+
+                <!-- Month 2: Goal Setup -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">মাস ২</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">গোল সেটআপ (Goal Setting)</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">গোল কী, কেন এবং কীভাবে অবাস্তব চিন্তা বাদ দিয়ে হাতে-কলমে নিজের ৩ মাস, ১ বছর ও ৫ বছরের বাস্তব অ্যাকশন ম্যাপ আঁকতে হয়।</p>
+                </div>
+
+                <!-- Month 3: Skill Philosophy -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">মাস ৩</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">স্কিল ফিলোসফি (Skill = Money)</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">স্কিল ইজ ইকুয়াল টু এক্সপার্টাইজ, স্কিল ইজ ইকুয়াল টু ইউর মানি অ্যান্ড ফিউচার। ডিগ্রি নয়, বাস্তব দক্ষতা কীভাবে ক্যারিয়ার গড়ে দেয়।</p>
+                </div>
+
+                <!-- Month 4: Communication & Negotiation -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">মাস ৪</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">কমিউনিকেশন ও নেগোসিয়েশন</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">যেকোনো মানুষের সাথে পরিষ্কার ও প্রভাবশালী ভাষায় কথা বলা এবং উইন-উইন দরকষাকষির মূলনীতি বাস্তব ড্রিলের মাধ্যমে শেখা।</p>
+                </div>
+
+                <!-- Month 5: Teamwork -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">মাস ৫</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">টিমওয়ার্ক ও পিপল ম্যানেজমেন্ট</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">দলবদ্ধভাবে কাজ করা, বন্ধুদের সমন্বয় করা এবং অহংকার দূর করে একসাথে প্রজেক্ট সফল করার লিডারশিপ মানসিকতা।</p>
+                </div>
+
+                <!-- Month 6: Leadership -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">মাস ৬</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">লিডারশিপ স্কিল (Leadership)</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">কঠিন পরিস্থিতিতে দায়িত্ব নিজের কাঁধে নেওয়া, সামনে থেকে দল পরিচালনা করা এবং নির্ভীক ডিসিশন মেকিং ক্ষমতা।</p>
+                </div>
+
+                <!-- Month 7: Business Mindset -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">মাস ৭</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">বিজনেস মাইন্ডসেট (Business)</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">বাংলাদেশে ৯৫% ব্যবসা কেন ব্যর্থ হয়? ব্যবসায়ী মানসিকতা তৈরি এবং কম পুঁজিতে ছোট ব্যবসার আইডিয়া ভ্যালিডেশন।</p>
+                </div>
+
+                <!-- Month 8: Sales & Marketing -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">মাস ৮</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">সেলস ও মার্কেটিং (Sales)</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">লজ্জা ভেঙে সরাসরি কথা বলে পণ্য/সেবা বিক্রি করার কৌশল, কাস্টমার সাইকোলজি এবং প্রাথমিক বিজনেস গ্রোথ ড্রাইভ।</p>
+                </div>
+
+                <!-- Month 9: AI Foundation -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-purple-500/20">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">মাস ৯</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">এআই ফাউন্ডেশন (AI in Life)</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">দৈনন্দিন পড়াশোনা, রিসার্চ এবং দৈনন্দিন জীবনে এআই টুলসকে নিজের পার্সোনাল অ্যাসিস্ট্যান্ট হিসেবে কাজে লাগানো।</p>
+                </div>
+
+                <!-- Month 10: AI Creative Projects -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-purple-500/20">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">মাস ১০</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">এআই ক্রিয়েটিভ প্রজেক্ট</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">যার কোডিং ভালো লাগে সে সফটওয়্যার, যার ডিজাইন ভালো লাগে সে গ্রাফিক্স—এআই দিয়ে বাস্তব প্রজেক্ট ও পোর্টফোলিও তৈরি।</p>
+                </div>
+
+                <!-- Month 11: Monetization -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-purple-500/20">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">মাস ১১</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">এআই দিয়ে অনলাইন ইনকাম</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">এআই টুলস দিয়ে ফ্রিল্যান্সিং, ক্লায়েন্ট কমিউনিকেশন ও ডিজিটাল সার্ভিস বিক্রি করে স্বাবলম্বী হওয়ার ব্যবহারিক দিকনির্দেশনা।</p>
+                </div>
+
+                <!-- Month 12: Career Launch -->
+                <div class="p-4 rounded-2xl bg-white/[0.03] border border-purple-500/20">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">মাস ১২</span>
+                    <h4 class="text-sm font-bold text-white mt-2.5 mb-1.5">ক্যারিয়ার লঞ্চ ও গ্রোথ জোন</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">কমফোর্ট জোন চিরতরে ভেঙে গ্রোথ জোনে স্থায়ী রূপান্তর, সিভি অডিট এবং আন্তর্জাতিক প্ল্যাটফর্মে নিজেকে উপস্থাপনের প্রস্তুতি।</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION 4: স্বাস্থ্য, ঘুম, পুষ্টি ও অভিভাবক ট্র্যাকিং -->
+        <div class="p-6 md:p-8 rounded-3xl bg-gradient-to-r from-blue-900/40 via-cyan-900/20 to-blue-950/50 border border-cyan-500/30 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-cyan-400/20 border border-cyan-400/50 flex items-center justify-center text-cyan-300 text-3xl flex-shrink-0">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white">লাইফস্টাইল ট্র্যাকিং, ঘুম ও অভিভাবক সমন্বয়</h4>
+                    <p class="text-xs md:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
+                        মানুষের আসল সফলতা নির্ভর করে সঠিক ঘুম ও পুষ্টিকর খাদ্যের ওপর। শিক্ষার্থী ঠিকমতো ঘুমাচ্ছে কি না, পুষ্টিকর খাবার খাচ্ছে কি না—আমাদের ক্লাসে প্রতিনিয়ত মনিটর করা হবে। কোনো ব্যত্যয় ঘটলে অভিভাবককে সাপ্তাহিক আপডেট এবং প্রফেশনাল কাউন্সিলিংয়ের ব্যবস্থা রয়েছে।
+                    </p>
+                </div>
+            </div>
+            <a href="#admissionSection" class="w-full md:w-auto text-center px-6 py-3.5 rounded-full text-xs font-black bg-cyan-400 text-slate-900 hover:bg-cyan-300 transition-all flex-shrink-0 shadow-lg shadow-cyan-400/20">
+                ভর্তি আবেদন ফরম <i class="fa-solid fa-arrow-down ml-1"></i>
+            </a>
+        </div>
+
+        <!-- SECTION 5: Admission Form (High-Contrast White Card) -->
+        <main id="admissionSection" class="w-full max-w-3xl mx-auto admission-card p-6 md:p-12 relative">
+            
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full">সীমিত আসন সংখ্যা</span>
+                <h3 class="text-2xl md:text-3xl font-black text-slate-900 mt-3 mb-1">SkillNest শিক্ষার্থী ভর্তি আবেদন</h3>
+                <p class="text-xs md:text-sm text-slate-500">৩টি সহজ ধাপে আপনার তথ্য ও ক্লাসের পছন্দের শিফট নিশ্চিত করুন</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-2.5 text-xs font-bold uppercase tracking-wider">
+                    <span id="stepIndicatorText" class="text-blue-700 font-black text-sm">ধাপ ১: প্রাথমিক তথ্য ও শিফট</span>
+                    <span id="stepPercentText" class="text-blue-600 font-black text-sm">৩৩% সম্পন্ন</span>
+                </div>
+                <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                    <div id="progressBar" class="h-full bg-gradient-to-r from-blue-600 to-cyan-500 w-1/3 transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <form id="studentRegistrationForm" class="space-y-6">
+                
+                <!-- ================= STEP 1 ================= -->
+                <div id="step1" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">শিক্ষার্থীর পুরো নাম *</label>
+                            <input type="text" id="student_name" required placeholder="উদা: ফখরা আজম" class="w-full px-4 py-3.5 rounded-xl clean-input text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">মোবাইল নম্বর *</label>
+                            <input type="tel" id="student_phone" required placeholder="017xxxxxxxx" class="w-full px-4 py-3.5 rounded-xl clean-input text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">বর্তমান শ্রেণি *</label>
+                            <select id="student_class" required class="w-full px-4 py-3.5 rounded-xl clean-input text-sm cursor-pointer">
+                                <option value="">শ্রেণি নির্বাচন করুন</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Class 7">Class 7</option>
+                                <option value="Class 8">Class 8</option>
+                                <option value="Class 9">Class 9</option>
+                                <option value="Class 10">Class 10</option>
+                                <option value="HSC 1st/2nd Year">HSC (একাদশ / দ্বাদশ)</option>
+                                <option value="Undergraduate/Other">বিশ্ববিদ্যালয় / অন্যান্য</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">জন্ম তারিখ *</label>
+                            <input type="date" id="student_dob" required class="w-full px-4 py-3.5 rounded-xl clean-input text-sm">
+                        </div>
+                    </div>
+
+                    <!-- Shift Selection Box: Updated with 1.5-hour realistic time blocks -->
+                    <div class="p-5 rounded-2xl bg-blue-50/70 border border-blue-200 space-y-4">
+                        <label class="block text-xs font-black text-blue-900 uppercase tracking-wide flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-blue-600"></i> ক্লাসের ফ্রি সময় (শিফট নির্বাচন করুন) *
+                        </label>
+
+                        <!-- Morning Shift -->
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 block mb-2"><i class="fa-solid fa-sun"></i> সকালের শিফট:</span>
+                            <div class="grid grid-cols-2 gap-3 text-xs chip-option">
+                                <div>
+                                    <input type="radio" name="batch_slot" id="slot_m1" value="Morning 7:00 AM - 8:30 AM" required>
+                                    <label for="slot_m1" class="block text-center py-3.5 px-3 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
+                                        সকাল ৭:০০ - ৮:৩০
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="batch_slot" id="slot_m2" value="Morning 8:00 AM - 9:30 AM">
+                                    <label for="slot_m2" class="block text-center py-3.5 px-3 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
+                                        সকাল ৮:০০ - ৯:৩০
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evening Shift -->
+                        <div>
+                            <span class="text-xs font-bold text-blue-800 block mb-2"><i class="fa-solid fa-moon"></i> বিকাল ও সান্ধ্য শিফট:</span>
+                            <div class="grid grid-cols-3 gap-2.5 text-xs chip-option">
+                                <div>
+                                    <input type="radio" name="batch_slot" id="slot_e1" value="Evening 4:30 PM - 6:00 PM">
+                                    <label for="slot_e1" class="block text-center py-3 px-2 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
+                                        বিকাল ৪:৩০ - ৬:০০
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="batch_slot" id="slot_e2" value="Evening 6:00 PM - 7:30 PM">
+                                    <label for="slot_e2" class="block text-center py-3 px-2 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
+                                        সন্ধ্যা ৬:০০ - ৭:৩০
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="batch_slot" id="slot_e3" value="Night 7:30 PM - 9:00 PM">
+                                    <label for="slot_e3" class="block text-center py-3 px-2 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
+                                        রাত ৭:৩০ - ৯:০০
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="goToStep(2)" class="w-full py-4 rounded-xl font-black text-sm bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-95 text-white shadow-lg shadow-blue-500/30 transition-all flex items-center justify-center gap-2">
+                        পরবর্তী ধাপে যান <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- ================= STEP 2 ================= -->
+                <div id="step2" class="space-y-5 hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">বাবার নাম *</label>
+                            <input type="text" id="father_name" placeholder="বাবার পুরো নাম" class="w-full px-4 py-3.5 rounded-xl clean-input text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">অভিভাবকের মোবাইল নম্বর *</label>
+                            <input type="tel" id="guardian_phone" placeholder="018xxxxxxxx" class="w-full px-4 py-3.5 rounded-xl clean-input text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-2">পূর্ণ ঠিকানা (গ্রাম/রোড, থানা, জেলা) *</label>
+                        <textarea id="student_address" rows="2" placeholder="আপনার স্থায়ী ঠিকানা লিখুন..." class="w-full px-4 py-3.5 rounded-xl clean-input text-sm"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">ভবিষ্যতে কী হতে চাও? (Aim in Life) *</label>
+                            <input type="text" id="student_aim" placeholder="উদা: সফটওয়্যার ইঞ্জিনিয়ার, ট্রেইনার..." class="w-full px-4 py-3.5 rounded-xl clean-input text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">অবসরে কী করতে ভালোবাসো? (Hobby) *</label>
+                            <input type="text" id="student_hobby" placeholder="উদা: বই পড়া, প্রেজেন্টেশন, কোডিং..." class="w-full px-4 py-3.5 rounded-xl clean-input text-sm">
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 pt-2">
+                        <button type="button" onclick="goToStep(1)" class="w-1/3 py-3.5 rounded-xl font-bold text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-arrow-left text-xs"></i> পূর্ববর্তী
+                        </button>
+                        <button type="button" onclick="goToStep(3)" class="w-2/3 py-3.5 rounded-xl font-black text-sm bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-95 text-white shadow-lg shadow-blue-500/30 transition-all flex items-center justify-center gap-2">
+                            পোশাক ও সম্মতি ধাপ <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ================= STEP 3 ================= -->
+                <div id="step3" class="space-y-5 hidden">
+                    
+                    <!-- T-Shirt Size -->
+                    <div class="p-5 rounded-2xl bg-blue-50/70 border border-blue-200 space-y-3">
+                        <label class="block text-xs font-black text-blue-900 uppercase tracking-wide flex items-center gap-2">
+                            <i class="fa-solid fa-shirt text-blue-600"></i> অফিসিয়াল টি-শার্ট / কিট সাইজ নির্বাচন করুন *
+                        </label>
+                        <div class="grid grid-cols-5 gap-3 text-xs chip-option">
+                            <div>
+                                <input type="radio" name="cloth_size" id="size_s" value="S" required>
+                                <label for="size_s" class="block text-center py-3.5 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">S</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="cloth_size" id="size_m" value="M">
+                                <label for="size_m" class="block text-center py-3.5 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">M</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="cloth_size" id="size_l" value="L">
+                                <label for="size_l" class="block text-center py-3.5 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">L</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="cloth_size" id="size_xl" value="XL">
+                                <label for="size_xl" class="block text-center py-3.5 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">XL</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="cloth_size" id="size_xxl" value="XXL">
+                                <label for="size_xxl" class="block text-center py-3.5 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">XXL</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Media Consent -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-300 space-y-2">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" id="student_media_consent" required class="mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300 bg-white">
+                            <span class="text-xs text-slate-700 leading-relaxed font-medium">
+                                <b class="text-blue-900 font-bold">সোশ্যাল মিডিয়া ও ভিডিও প্রকাশ সংক্রান্ত সম্মতি:</b> আমি ও আমার অভিভাবক সম্মতি প্রদান করছি যে, SkillNest প্ল্যাটফর্মের ক্লাস কার্যক্রম, স্পিকিং প্র্যাকটিস, প্রেজেন্টেশন এবং প্রমোশনাল ভিডিও/ছবি প্রতিষ্ঠানের অফিসিয়াল ফেসবুক পেজ ও সোশ্যাল মিডিয়ায় শিক্ষামূলক প্রচারণায় প্রকাশ করা যাবে। *
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="flex gap-3 pt-2">
+                        <button type="button" onclick="goToStep(2)" class="w-1/3 py-3.5 rounded-xl font-bold text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-arrow-left text-xs"></i> পূর্ববর্তী
+                        </button>
+                        <button type="submit" class="w-2/3 py-3.5 rounded-xl font-black text-sm bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-95 text-white shadow-lg shadow-blue-500/30 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-check"></i> সম্পূর্ণ রেজিস্ট্রেশন সম্পন্ন করুন
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+    <!-- Teacher Application Modal -->
+    <div id="teacherModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
+        <div class="w-full max-w-xl admission-card rounded-3xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleTeacherModal(false)" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 transition-colors">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            
+            <h3 class="text-xl font-black text-blue-900 mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-chalkboard-user text-blue-600"></i> শিক্ষক হিসেবে আবেদন করুন
+            </h3>
+            <p class="text-xs text-slate-500 mb-5">SkillNest একাডেমিতে যোগ দিয়ে তরুণদের মেধা ও ক্যারিয়ার বিকাশে ভূমিকা রাখুন</p>
+
+            <form id="teacherApplicationForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">শিক্ষকের পুরো নাম *</label>
+                        <input type="text" required placeholder="আপনার পুরো নাম" class="w-full px-3.5 py-3 rounded-xl clean-input text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">জন্ম তারিখ *</label>
+                        <input type="date" required class="w-full px-3.5 py-3 rounded-xl clean-input text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">ফোন নম্বর *</label>
+                        <input type="tel" required placeholder="017xxxxxxxx" class="w-full px-3.5 py-3 rounded-xl clean-input text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">ইমেইল অ্যাড্রেস *</label>
+                        <input type="email" required placeholder="name@example.com" class="w-full px-3.5 py-3 rounded-xl clean-input text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">সর্বোচ্চ শিক্ষাগত যোগ্যতা *</label>
+                        <input type="text" required placeholder="Masters / B.Sc in English/CSE" class="w-full px-3.5 py-3 rounded-xl clean-input text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">কোন বিষয়ে পড়াতে আগ্রহী? *</label>
+                        <input type="text" required placeholder="Spoken English, AI, Coding" class="w-full px-3.5 py-3 rounded-xl clean-input text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">পূর্ণ ঠিকানা *</label>
+                    <textarea rows="2" required placeholder="আপনার স্থায়ী ও বর্তমান ঠিকানা..." class="w-full px-3.5 py-3 rounded-xl clean-input text-sm"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">পড়াতে কেন ভালোবাসেন? (Motivation) *</label>
+                    <textarea rows="2" required placeholder="শিক্ষকতার প্রতি আপনার প্যাশন লিখুন..." class="w-full px-3.5 py-3 rounded-xl clean-input text-sm"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">ভবিষ্যত ক্যারিয়ার লক্ষ্য (Vision) *</label>
+                    <input type="text" required placeholder="উদা: মাস্টার ট্রেইনার হওয়া..." class="w-full px-3.5 py-3 rounded-xl clean-input text-sm">
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200">
+                    <label class="flex items-start gap-2.5 cursor-pointer">
+                        <input type="checkbox" required class="mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300 bg-white">
+                        <span class="text-xs text-slate-700 leading-relaxed font-medium">
+                            <b class="text-blue-900 font-bold">মিডিয়া সম্মতি:</b> আমি সম্মতি দিচ্ছি যে আমার পরিচালিত ক্লাস সেশনের ভিডিও SkillNest-এর ফেসবুক পেজে শিক্ষামূলক প্রচারণায় প্রকাশ করা যাবে। *
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl font-black text-sm bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-95 text-white shadow-lg transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i> আবেদন ও সম্মতি জমা দিন
+                </button>
+            </form>
         </div>
     </div>
 
-    <!-- Evening Shift -->
-    <div>
-        <span class="text-xs font-bold text-blue-800 block mb-2"><i class="fa-solid fa-moon"></i> বিকাল ও সান্ধ্য শিফট:</span>
-        <div class="grid grid-cols-3 gap-2.5 text-xs chip-option">
-            <div>
-                <input type="radio" name="batch_slot" id="slot_e1" value="Evening 4:30 PM - 6:00 PM">
-                <label for="slot_e1" class="block text-center py-3 px-2 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
-                    বিকাল ৪:৩০ - ৬:০০
-                </label>
-            </div>
-            <div>
-                <input type="radio" name="batch_slot" id="slot_e2" value="Evening 6:00 PM - 7:30 PM">
-                <label for="slot_e2" class="block text-center py-3 px-2 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
-                    সন্ধ্যা ৬:০০ - ৭:৩০
-                </label>
-            </div>
-            <div>
-                <input type="radio" name="batch_slot" id="slot_e3" value="Night 7:30 PM - 9:00 PM">
-                <label for="slot_e3" class="block text-center py-3 px-2 rounded-xl bg-white border border-slate-300 cursor-pointer font-bold transition-all text-slate-700 hover:border-blue-500">
-                    রাত ৭:৩০ - ৯:০০
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- Script Logic -->
+    <script>
+        function goToStep(step) {
+            const step1 = document.getElementById('step1');
+            const step2 = document.getElementById('step2');
+            const step3 = document.getElementById('step3');
+            const bar = document.getElementById('progressBar');
+            const stepText = document.getElementById('stepIndicatorText');
+            const percentText = document.getElementById('stepPercentText');
+
+            if (step === 2) {
+                const name = document.getElementById('student_name').value.trim();
+                const phone = document.getElementById('student_phone').value.trim();
+                const studentClass = document.getElementById('student_class').value;
+                const dob = document.getElementById('student_dob').value;
+                const slot = document.querySelector('input[name="batch_slot"]:checked');
+
+                if (!name || !phone || !studentClass || !dob || !slot) {
+                    alert('অনুগ্রহ করে ধাপ ১-এর সকল প্রয়োজনীয় তথ্য ও শিফট নির্বাচন করুন।');
+                    return;
+                }
+
+                step1.classList.add('hidden');
+                step3.classList.add('hidden');
+                step2.classList.remove('hidden');
+                bar.style.width = '66%';
+                stepText.innerText = 'ধাপ ২: পারিবারিক ও লক্ষ্য';
+                percentText.innerText = '৬৬% সম্পন্ন';
+            } else if (step === 3) {
+                const father = document.getElementById('father_name').value.trim();
+                const gPhone = document.getElementById('guardian_phone').value.trim();
+                const address = document.getElementById('student_address').value.trim();
+                const aim = document.getElementById('student_aim').value.trim();
+                const hobby = document.getElementById('student_hobby').value.trim();
+
+                if (!father || !gPhone || !address || !aim || !hobby) {
+                    alert('অনুগ্রহ করে ধাপ ২-এর সকল তথ্য পূরণ করুন।');
+                    return;
+                }
+
+                step1.classList.add('hidden');
+                step2.classList.add('hidden');
+                step3.classList.remove('hidden');
+                bar.style.width = '100%';
+                stepText.innerText = 'ধাপ ৩: পোশাক ও মিডিয়া সম্মতি';
+                percentText.innerText = '১০০% সম্পন্ন';
+            } else {
+                step2.classList.add('hidden');
+                step3.classList.add('hidden');
+                step1.classList.remove('hidden');
+                bar.style.width = '33%';
+                stepText.innerText = 'ধাপ ১: প্রাথমিক তথ্য ও শিফট';
+                percentText.innerText = '৩৩% সম্পন্ন';
+            }
+        }
+
+        function toggleTeacherModal(show) {
+            const modal = document.getElementById('teacherModal');
+            if (show) modal.classList.remove('hidden');
+            else modal.classList.add('hidden');
+        }
+
+        document.getElementById('studentRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const size = document.querySelector('input[name="cloth_size"]:checked');
+            const consent = document.getElementById('student_media_consent').checked;
+
+            if (!size) {
+                alert('অনুগ্রহ করে পোশাকের সাইজ নির্বাচন করুন।');
+                return;
+            }
+            if (!consent) {
+                alert('সোশ্যাল মিডিয়া ভিডিও সম্মতি বক্সে টিক চিহ্ন দিন।');
+                return;
+            }
+
+            alert('অভিনন্দন! SkillNest-এ আপনার রেজিস্ট্রেশন ও সম্মতি সফলভাবে সম্পন্ন হয়েছে।');
+        });
+
+        document.getElementById('teacherApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('ধন্যবাদ! শিক্ষক হিসেবে আপনার আবেদন ও সম্মতি সফলভাবে গৃহীত হয়েছে। আমাদের টিম যোগাযোগ করবে।');
+            toggleTeacherModal(false);
+        });
+    </script>
+</body>
+</html>
