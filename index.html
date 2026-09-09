@@ -13,17 +13,17 @@
         :root {
             --brand-cyan: #00f2fe;
             --brand-blue: #38bdf8;
-            --brand-gold: #f59e0b;
-            --card-bg: rgba(15, 27, 49, 0.90);
+            --brand-amber: #f59e0b;
+            --card-bg: rgba(13, 27, 49, 0.92);
             --border-glow: rgba(0, 242, 254, 0.35);
         }
 
         body {
             font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
-            background-color: #061122;
+            background-color: #050d1a;
             background-image: 
                 radial-gradient(circle at 10% 10%, rgba(0, 242, 254, 0.22) 0px, transparent 45%),
-                radial-gradient(circle at 90% 15%, rgba(56, 189, 248, 0.22) 0px, transparent 45%),
+                radial-gradient(circle at 90% 15%, rgba(56, 189, 248, 0.24) 0px, transparent 45%),
                 radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.18) 0px, transparent 55%);
             background-attachment: fixed;
             color: #f1f5f9;
@@ -36,54 +36,53 @@
             backdrop-filter: blur(28px);
             -webkit-backdrop-filter: blur(28px);
             border: 1.5px solid var(--border-glow);
-            box-shadow: 0 30px 60px -15px rgba(2, 8, 20, 0.9), 0 0 35px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 30px 60px -15px rgba(2, 8, 20, 0.95), 0 0 35px rgba(0, 242, 254, 0.15);
         }
 
-        /* Big Brand Logo Visual Frame */
+        /* Seamless High-End Logo Container */
         .brand-logo-frame {
-            background: #ffffff;
-            border: 3px solid #00f2fe;
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.6), inset 0 0 12px rgba(2, 132, 199, 0.25);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.92));
+            border: 2.5px solid #00f2fe;
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.5), inset 0 0 10px rgba(2, 132, 199, 0.2);
+            transition: transform 0.35s ease;
         }
         .brand-logo-frame:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 45px rgba(0, 242, 254, 0.85);
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(0, 242, 254, 0.75);
         }
 
-        /* Enlarged Logo Circles (Zoomed & Cropped Padding) */
-        .zoomed-logo {
-            transform: scale(1.68);
+        /* Logo Image Zoom (Takes Only the 3 Rings, Hiding Whitespace) */
+        .zoomed-rings {
+            transform: scale(2.3);
             transform-origin: center center;
             object-fit: contain;
         }
 
-        /* Glowing Tagline */
+        /* Glowing Neon Tagline */
         .tagline-glow {
             color: #ffffff;
-            text-shadow: 0 0 12px rgba(0, 242, 254, 0.8), 0 0 24px rgba(56, 189, 248, 0.5);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.9), 0 0 20px rgba(56, 189, 248, 0.6);
             letter-spacing: 0.28em;
         }
 
-        /* Radiant Golden Badges */
+        /* High Visibility Golden Amber Badges */
         .gold-badge {
-            background: rgba(245, 158, 11, 0.12);
-            border: 1.5px solid rgba(245, 158, 11, 0.65);
+            background: rgba(245, 158, 11, 0.15);
+            border: 1.5px solid #f59e0b;
             color: #fbbf24;
-            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
-            transition: all 0.3s ease;
+            text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+            transition: all 0.25s ease;
         }
         .gold-badge:hover {
-            background: rgba(245, 158, 11, 0.25);
-            border-color: #fbbf24;
+            background: rgba(245, 158, 11, 0.28);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
         }
 
-        /* Input Styling */
+        /* Form Inputs */
         .master-input {
-            background: #0d1f3b !important;
+            background: #0b1c36 !important;
             border: 1.5px solid #1e3a63 !important;
             color: #ffffff !important;
             transition: all 0.25s ease-in-out;
@@ -92,7 +91,7 @@
             outline: none !important;
             border-color: #00f2fe !important;
             box-shadow: 0 0 16px rgba(0, 242, 254, 0.45) !important;
-            background: #11284d !important;
+            background: #10274c !important;
         }
 
         /* Time Slot Radio Cards */
@@ -118,15 +117,15 @@
         </button>
     </div>
 
-    <!-- Header Section with Large Visible Circles & Radiant Taglines -->
+    <!-- Header Section -->
     <header class="text-center max-w-xl mx-auto mb-8">
         <div class="flex items-center justify-center gap-5 mb-4">
             
-            <!-- Logo Frame (Enlarged Circles Inside) -->
-            <div class="w-24 h-24 rounded-3xl brand-logo-frame flex items-center justify-center flex-shrink-0 cursor-pointer overflow-hidden p-1">
+            <!-- Optimized Logo Frame (Balanced Size, Focused Rings) -->
+            <div class="w-20 h-20 rounded-2xl brand-logo-frame flex items-center justify-center flex-shrink-0 cursor-pointer overflow-hidden p-1">
                 <img src="https://i.ibb.co.com/60w8XYZR/logo.png" 
                      alt="SkillNest Logo" 
-                     class="w-full h-full zoomed-logo"
+                     class="w-full h-full zoomed-rings"
                      onerror="this.onerror=null; this.src='https://i.ibb.co/60w8XYZR/logo.png';">
             </div>
 
@@ -141,7 +140,7 @@
             </div>
         </div>
 
-        <!-- Radiant Golden Badges (Learn • Grow • Lead) -->
+        <!-- High Visibility Golden Badges -->
         <div class="flex items-center justify-center gap-3">
             <span class="px-4 py-1.5 rounded-full text-xs font-bold gold-badge flex items-center gap-2">
                 <i class="fa-solid fa-book-open text-[11px]"></i> Learn
